@@ -1,0 +1,54 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/portfolio/PageHero.astro";
+import Icon from "../components/home/Icon.astro";
+import { contact, href } from "../data/site";
+---
+
+<Base
+  title="Contact"
+  description="Contact Rizma Prawira about research, teaching, and practical data projects."
+>
+  <PageHero
+    label="Contact"
+    title="Let’s stay in touch."
+    description="Curious about science, driven by data, and passionate about sharing knowledge."
+    icon="mail"
+  />
+  <section class="contact-layout">
+    <div>
+      <h2>
+        Research, learning,
+        <br />
+        or a useful idea?
+      </h2>
+      <p>
+        Get in touch by email, or find my public work and professional profile
+        through the links here.
+      </p>
+      <p>
+        For private tutoring, include the subject, academic level, learning
+        objectives, and preferred schedule.
+      </p>
+      <a class="button button-light" href={href("teaching/#tutoring")}>
+        Private tutoring information
+      </a>
+    </div>
+    <div class="contact-links">
+      {[
+        ["mail", "Email", contact.email, `mailto:${contact.email}`],
+        ["github", "GitHub", "rizmaprawira", contact.github],
+        ["linkedin", "LinkedIn", "Rizma Prawira", contact.linkedin],
+      ].map(([icon, label, text, url]) => (
+        <a href={url}>
+          <Icon name={icon} size={29} />
+          <span>
+            <strong>{label}</strong>
+            <small>{text}</small>
+          </span>
+          <Icon name="arrow" size={17} />
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

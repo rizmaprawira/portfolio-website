@@ -1,0 +1,89 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/portfolio/PageHero.astro";
+import Figure from "../../components/portfolio/Figure.astro";
+import { projectMedia } from "../../data/projects";
+import { publications } from "../../data/publications";
+import { href } from "../../data/site";
+export async function getStaticPaths() {
+  return (
+    await getCollection("research", ({ data }) => data.locale === "en")
+  ).map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+const { project } = Astro.props;
+const media = projectMedia[project.id];
+const pub =
+  media.publication === undefined ? null : publications[media.publication];
+const sentences = project.body!.trim().split(". ");
+const summary = sentences.shift()!;
+const methods = sentences.join(". ");
+---
+
+<Base title={project.data.title} description={summary} current="research">
+  <PageHero label={media.category} title={project.data.title} icon="weather" />
+  <Figure
+    name={media.image}
+    alt={media.alt}
+    caption={media.caption}
+    title={project.data.title}
+  />
+  <div class="detail-grid">
+    <article class="detail-copy">
+      <h2>Project overview</h2>
+      <p>{summary.endsWith(".") ? summary : summary + "."}</p>
+      {methods && (
+        <>
+          <h2>Approach & contributions</h2>
+          <p>{methods}</p>
+        </>
+      )}
+      {pub && (
+        <>
+          <h2>Related preprint</h2>
+          <p>{pub.authors}</p>
+          <h3>
+            <a href={pub.url}>{pub.title}</a>
+          </h3>
+          <p class="resource-metadata">
+            {pub.venue} · {pub.year} · {pub.status}
+          </p>
+          <p>
+            Consult the linked manuscript for its full methods, results, and
+            references.
+          </p>
+        </>
+      )}
+      <h2>Materials & availability</h2>
+      <p>
+        {pub
+          ? "The preprint is linked above. Additional downloadable materials have not been supplied for this page."
+          : "Additional methods, findings, and downloadable materials have not been supplied for public release on this page."}
+      </p>
+      <a class="button button-light" href={href("research/")}>
+        Back to research
+      </a>
+    </article>
+    <aside class="detail-sidebar">
+      <h2>Project details</h2>
+      <dl>
+        <div>
+          <dt>Role & affiliation</dt>
+          <dd>{project.data.context}</dd>
+        </div>
+        <div>
+          <dt>Year / period</dt>
+          <dd>{project.data.period}</dd>
+        </div>
+        <div>
+          <dt>Topics</dt>
+          <dd>{project.data.keywords.join(", ")}</dd>
+        </div>
+        <div>
+          <dt>Figure source</dt>
+          <dd>Supplied by Rizma Prawira</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</Base>

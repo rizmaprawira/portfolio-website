@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "route": "home",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "home",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "home",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,88 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/portfolio/PageHero.astro";
+import Icon from "../../components/home/Icon.astro";
+import { copy } from "../../data/copy";
+import { subjects } from "../../data/home";
+import { teachingRoles, tutoring } from "../../data/profile";
+import { href } from "../../data/site";
+---
+
+<Base
+  title="Teaching & Learning"
+  description={copy.teaching[0]}
+  current="teaching"
+>
+  <PageHero
+    label="Teaching & learning"
+    title="Build understanding. Grow confidence."
+    description={copy.teaching[0]}
+    icon="book"
+  />
+  <div class="research-intro">
+    {[copy.teaching[1], copy.teaching[3], copy.teaching[4]].map((p) => (
+      <p>{p}</p>
+    ))}
+  </div>
+  <section class="profile-section">
+    <h2>Learning resource library</h2>
+    <p>Subject → Topic → Lesson → Materials</p>
+    <p class="resource-metadata">
+      The public library is in preparation. Explore a subject to see its planned
+      topics.
+    </p>
+    <div class="home-subjects subject-index">
+      {subjects.map((subject) => (
+        <a
+          href={href(
+            `teaching/${subject.name.toLowerCase().replaceAll(" ", "-")}/`,
+          )}
+        >
+          <Icon name={subject.icon} size={30} />
+          <h3>{subject.name}</h3>
+          <p>{subject.topics}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section class="profile-section">
+    <h2>Teaching & practical experience</h2>
+    <div class="teaching-role-list">
+      {teachingRoles.map((role, i) => (
+        <article>
+          <Icon name={i === 1 ? "code" : "book"} size={30} />
+          <div>
+            <p class="resource-metadata">{role.period}</p>
+            <h3>{role.title}</h3>
+            <p>{role.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="profile-section" id="tutoring">
+    <div class="home-teaching">
+      <div>
+        <p class="eyebrow">
+          <Icon name="user" size={20} />
+          Learn with me
+        </p>
+        <h2>{tutoring[0]}</h2>
+        {tutoring.slice(1, 3).map((p) => (
+          <p>{p}</p>
+        ))}
+        <a
+          class="button"
+          href={`mailto:rizmaprawira@gmail.com?subject=Private%20tutoring%20enquiry`}
+        >
+          Discuss a lesson <Icon name="mail" size={18} />
+        </a>
+      </div>
+      <div>
+        {tutoring.slice(3).map((p) => (
+          <p>{p}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

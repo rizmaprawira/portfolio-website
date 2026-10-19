@@ -1,0 +1,121 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/portfolio/PageHero.astro";
+import Media from "../../components/portfolio/Media.astro";
+import Figure from "../../components/portfolio/Figure.astro";
+import Experience from "../../components/home/Experience.astro";
+import Icon from "../../components/home/Icon.astro";
+import { copy } from "../../data/copy";
+import { education, leadership, awards } from "../../data/profile";
+import { href } from "../../data/site";
+---
+
+<Base title="About & Experience" description={copy.bio[0]} current="about">
+  <PageHero
+    label="About & Experience"
+    title="A curious mind. A practical approach."
+    icon="user"
+  />
+  <section class="profile-intro" id="about">
+    <div>
+      <figure class="portrait-composition">
+        <Media name="rizma-prawira" alt="Portrait of Rizma Prawira." eager />
+        <figcaption>Rizma Prawira · Bandung, Indonesia</figcaption>
+      </figure>
+      <a class="button button-light" href={href("contact/")}>
+        <Icon name="mail" size={18} />
+        Get in touch
+      </a>
+    </div>
+    <div class="full-bio">
+      {copy.bio.map((p) => (
+        <p>{p}</p>
+      ))}
+    </div>
+  </section>
+  <section class="profile-section">
+    <h2>
+      <Icon name="book" size={28} />
+      Education
+    </h2>
+    <div class="education-block">
+      <h3>Institut Teknologi Bandung (ITB)</h3>
+      {education.map((p) => (
+        <p>{p}</p>
+      ))}
+    </div>
+  </section>
+  <Experience />
+  <section class="profile-section">
+    <h2>
+      <Icon name="briefcase" size={28} />
+      Leadership & organization
+    </h2>
+    <div class="leadership-grid">
+      {leadership.map((entry) => (
+        <article>
+          <p class="meta">{entry.period}</p>
+          <h3>{entry.title}</h3>
+          <p>{entry.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="profile-section">
+    <h2>
+      <Icon name="compass" size={28} />
+      Selected honors & awards
+    </h2>
+    <div class="award-layout">
+      <ul class="award-list">
+        {awards.map((award) => (
+          <li>
+            <span>{award.year}</span>
+            <strong>{award.title}</strong>
+          </li>
+        ))}
+      </ul>
+      <Figure
+        name="outstanding-student"
+        alt="Supplied Ganesha Prize certificate naming Rizma Dwinanda Prawira as an ITB outstanding-student finalist."
+        caption="Original certificate supplied by the owner. It records the ITB finalist distinction; faculty-level first place is listed separately in the approved text."
+        title="Outstanding-student certificate"
+      />
+    </div>
+  </section>
+  <section class="profile-section">
+    <h2>
+      <Icon name="code" size={28} />
+      Selected technical competencies
+    </h2>
+    <div class="interest-features">
+      {[
+        [
+          "weather",
+          "Atmospheric & climate analysis",
+          "Observational and reanalysis datasets, statistical methods, atmospheric diagnostics, and numerical modeling.",
+        ],
+        [
+          "data",
+          "Scientific data workflows",
+          "Python programming, data visualization, automation, and scientific data analysis.",
+        ],
+        [
+          "book",
+          "Teaching & problem solving",
+          "Statistics, atmospheric science, mathematics, scientific programming, and numerical methods.",
+        ],
+      ].map(([icon, title, text]) => (
+        <article>
+          <Icon name={icon} size={30} />
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+    <p class="resource-metadata">
+      Code implementation is heavily AI-assisted; read the full disclosure on
+      the Code, Data & AI page.
+    </p>
+  </section>
+</Base>

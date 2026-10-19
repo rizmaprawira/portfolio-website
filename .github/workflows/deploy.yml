@@ -1,6 +1,6 @@
 name: Deploy portfolio to GitHub Pages
 
-# Manual until the Phase 2 prototype has been approved.
+# Manual: do not launch without the owner's deployment permission.
 on:
   workflow_dispatch:
 
@@ -24,6 +24,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run validate:markdown
       - run: npm run build
         env:
           SITE_URL: https://rizmaprawira.github.io

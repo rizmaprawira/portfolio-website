@@ -1,0 +1,33 @@
+---
+import manifest from "../../data/image-manifest.json";
+import { href } from "../../data/site";
+interface Props {
+  name: string;
+  alt: string;
+  eager?: boolean;
+  class?: string;
+}
+const { name, alt, eager = false, class: className } = Astro.props;
+const asset = manifest.find((item) => item.slug === name);
+if (!asset) throw new Error(`Unknown supplied image: ${name}`);
+const width = (target: number) => Math.min(target, asset.dimensions[0]);
+const candidates = [480, 960, 1600]
+  .filter(
+    (target, index, all) =>
+      all.findIndex((value) => width(value) === width(target)) === index,
+  )
+  .map((target) => `${href(`images/${name}-${target}.webp`)} ${width(target)}w`)
+  .join(", ");
+---
+
+<img
+  class={className}
+  src={href(`images/${name}-960.webp`)}
+  srcset={candidates}
+  sizes="(max-width: 760px) 100vw, 55vw"
+  width={asset.dimensions[0]}
+  height={asset.dimensions[1]}
+  alt={alt}
+  loading={eager ? "eager" : "lazy"}
+  decoding="async"
+/>

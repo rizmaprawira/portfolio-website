@@ -1,24 +1,28 @@
-# Owner content checklist
+# Owner content checklist — current full redesign
 
-## Needed before the full release
+## Incorporated
 
-- [ ] Design feedback on Home, Research, Blog, and mobile navigation.
-- [ ] Current approved CV PDF. No download button is shown without a file.
-- [ ] Optional portrait, research figures, captions, alt text, and permission to publish.
-- [ ] Reconfirm the two preprint statuses before launch; current labels retain approved copy.
-- [ ] Genuine blog manuscript(s), dates, categories, and any associated assets. Suggested titles remain internal only.
-- [ ] Public teaching materials, subject/topic/lesson placement, and redistribution permissions.
-- [ ] Public resource URLs, licenses, and descriptions for planned resources.
-- [ ] Institutional/employer permission for any materials derived from nonpublic work.
+- Approved English DOCX and its extracted content.
+- All six research summaries and their primary supplied images.
+- Portrait and fog-harvesting group photograph.
+- Parametric-loss figure: explicitly approved for public use.
+- Award certificate: owner explicitly requested keeping the supplied certificate after review.
+- Education, professional and organizational history, approved awards, teaching experience, tutoring, and AI disclosure.
+- One public postal-code repository and five verified source CSV records.
+- Public email, GitHub, and LinkedIn from the approved document.
+- Full page architecture and image lightboxes. No MITgcm content.
 
-## Confirmed
+## Still needed for additional content / launch review
 
-- English copy: supplied October 19, 2026 document.
-- Public email: rizmaprawira@gmail.com (approved document takes precedence over old site).
-- GitHub and LinkedIn: approved document URLs.
-- Separate public GitHub repository: `rizmaprawira/portfolio-website` (owner approved).
-- No fictional posts, generated project imagery, or MITgcm content.
+- [ ] Current CV PDF; the CV route currently offers experience and email-request links.
+- [ ] Genuine blog articles and dates. No article ideas are presented as published posts.
+- [ ] Genuine lessons, downloads, videos, answer keys, and usage permissions.
+- [ ] Release URLs, documentation, licenses, and permitted materials for the five planned/draft code resources.
+- [ ] Formal image credits if third-party acknowledgements are required.
+- [ ] Confirm ENSO figure P1/P2 year mapping before adding dates to those panel labels.
+- [ ] Reconfirm preprint status before public launch; approved preprint labels are preserved.
+- [ ] Optional software screenshots and teaching photographs. Current sections use coherent icons rather than invented media.
+- [ ] Actual numerical research data if a future plot should expose values or recalculate fields.
+- [ ] Owner permission before running the manual GitHub Pages deployment.
 
-## Prototype boundaries
-
-Dedicated About, Teaching, Code, resource detail, project detail, and article pages await design approval. Their existing homepage previews are navigable. Blog category controls operate on the empty archive; real post filtering arrives with article templates in Phase 3. RSS is valid but empty. No Indonesian option is displayed without translations.
+The original `careerpage` repository and live deployment have not been changed. The new project remains separate.

@@ -1,26 +1,237 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../layouts/Base.astro';
-import Research from '../components/home/Research.astro';
-import Experience from '../components/home/Experience.astro';
-import Teaching from '../components/home/Teaching.astro';
-import Build from '../components/home/Build.astro';
-import Journal from '../components/home/Journal.astro';
-import ScientificSlot from '../components/home/ScientificSlot.astro';
-import Icon from '../components/home/Icon.astro';
-import { copy } from '../data/copy';
-import { heroFigure } from '../data/scientific-assets';
-import '../styles/home.css';
-const projects = (await getCollection('research', ({data}) => data.locale === 'en')).sort((a,b) => a.data.order - b.data.order).filter(project => ['enso-rainfall', 'cyclone-senyar', 'extreme-precipitation'].includes(project.id));
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Icon from "../components/home/Icon.astro";
+import Media from "../components/portfolio/Media.astro";
+import ProjectCard from "../components/portfolio/ProjectCard.astro";
+import { copy } from "../data/copy";
+import { href } from "../data/site";
+import { subjects, resources, aiStatement } from "../data/home";
+const projects = (await getCollection("research"))
+  .filter((p) =>
+    ["enso-rainfall", "cyclone-senyar", "water-harvesting"].includes(p.id),
+  )
+  .sort((a, b) => a.data.order - b.data.order);
+const shortcuts = [
+  ["weather", "Research", "research/"],
+  ["book", "Teaching", "teaching/"],
+  ["code", "Code, Data & AI", "code-data-ai/"],
+  ["pen", "Notes & Perspectives", "blog/"],
+];
 ---
-<Base title="Home" description="Rizma Prawira — Meteorology graduate, researcher, data enthusiast, and educator in Bandung, Indonesia." current="home">
-  <div class="scientific-home">
-    <section class="science-hero" aria-labelledby="home-heading"><div class="hero-byline"><span>Rizma Prawira</span><span>Bandung, Indonesia</span></div><div class="hero-composition"><div class="hero-copy"><h1 id="home-heading">{copy.headline}</h1><p>{copy.supporting}</p><a class="home-link" href="#selected-research">Explore my research <Icon name="arrow" size={17} /></a></div><div class="hero-visual"><ScientificSlot asset={heroFigure} /><div class="hero-disciplines"><span>Meteorology Graduate</span><span>Researcher</span><span>Data Enthusiast</span><span>Educator</span></div></div></div></section>
-    <section id="about" class="home-about" aria-labelledby="about-heading"><div><h2 id="about-heading">Science is where<br />my curiosity starts.</h2><a class="home-link" href="#experience-heading">Explore my experience <Icon name="arrow" size={16} /></a></div><div><p>{copy.bio[0]}</p><p>{copy.bio[4]}</p></div></section>
-    <Research projects={projects} />
-    <Experience />
-    <Teaching />
-    <Build />
-    <Journal />
-  </div>
+
+<Base
+  title="Home"
+  description="Rizma Prawira — meteorology graduate, researcher, data enthusiast, and educator."
+  current="home"
+>
+  <section class="welcome-hero">
+    <div class="welcome-copy">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Rizma Prawira.</h1>
+      <p class="professional-line">
+        Meteorology Graduate · Researcher · Data Enthusiast · Educator
+      </p>
+      <h2>{copy.headline}</h2>
+      <p>{copy.supporting}</p>
+      <div class="button-row">
+        <a class="button" href={href("research/")}>
+          <Icon name="weather" size={19} />
+          Explore my work
+        </a>
+        <a class="button button-light" href={href("contact/")}>
+          <Icon name="mail" size={19} />
+          Let’s connect
+        </a>
+      </div>
+    </div>
+    <figure class="portrait-composition">
+      <Media
+        name="rizma-prawira"
+        alt="Rizma Prawira smiling with her arms crossed."
+        eager
+      />
+      <figcaption>
+        <Icon name="compass" size={20} />
+        <span>
+          Based in Bandung, Indonesia
+          <small>Curious about science. Open to learning.</small>
+        </span>
+      </figcaption>
+    </figure>
+  </section>
+  <nav class="category-shortcuts" aria-label="Explore my website">
+    {shortcuts.map(([icon, label, path]) => (
+      <a href={href(path)}>
+        <span class="shortcut-icon">
+          <Icon name={icon} size={25} />
+        </span>
+        <span>{label}</span>
+        <Icon name="arrow" size={17} />
+      </a>
+    ))}
+  </nav>
+  <section class="portfolio-section about-preview" id="about">
+    <div class="section-title">
+      <p class="eyebrow">A glimpse into my work</p>
+      <h2>
+        Science, useful tools,
+        <br />
+        and shared knowledge.
+      </h2>
+      <p>{copy.bio[0]}</p>
+    </div>
+    <div class="interest-features">
+      {[
+        [
+          "weather",
+          "Research & Publications",
+          "Explore my research on ENSO–rainfall teleconnections, tropical cyclones, and climate-related risk, including publicly available scientific preprints.",
+          "research/",
+        ],
+        [
+          "book",
+          "Teaching & Learning Resources",
+          "Discover my teaching experience, private tutoring services, and a growing collection of tutorials, exercises, and learning materials.",
+          "teaching/",
+        ],
+        [
+          "code",
+          "Code, Data & AI",
+          "Explore datasets, practical tools, and automation projects built through AI-assisted development, guided by domain knowledge and a focus on useful, verifiable results.",
+          "code-data-ai/",
+        ],
+      ].map(([icon, title, text, path]) => (
+        <article>
+          <Icon name={icon} size={34} />
+          <h3>{title}</h3>
+          <p>{text}</p>
+          <a class="inline-link" href={href(path)}>
+            Explore <Icon name="arrow" size={17} />
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="portfolio-section">
+    <div class="section-title section-title-row">
+      <div>
+        <p class="eyebrow">
+          <Icon name="weather" size={20} /> Research in focus
+        </p>
+        <h2>
+          From atmospheric questions
+          <br />
+          to practical understanding.
+        </h2>
+      </div>
+      <a class="button button-light" href={href("research/")}>
+        All research <Icon name="arrow" size={17} />
+      </a>
+    </div>
+    <div class="alternating-projects">
+      {projects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </section>
+  <section class="portfolio-section home-teaching" id="teaching">
+    <div>
+      <p class="eyebrow">
+        <Icon name="book" size={21} /> Teaching & learning
+      </p>
+      <h2>{copy.teaching[0]}</h2>
+      <p>{copy.teaching[1]}</p>
+      <div class="teaching-highlights">
+        <span>
+          <strong>150+</strong>Basic Statistics students supported
+        </span>
+        <span>
+          <strong>9</strong>university courses assisted
+        </span>
+        <span>
+          <strong>Since 2024</strong>private tutoring
+        </span>
+      </div>
+      <a class="button" href={href("teaching/")}>
+        Find your learning path <Icon name="arrow" size={17} />
+      </a>
+    </div>
+    <div class="home-subjects">
+      {subjects.map((subject) => (
+        <a
+          href={href(
+            `teaching/${subject.name.toLowerCase().replaceAll(" ", "-")}/`,
+          )}
+        >
+          <Icon name={subject.icon} size={31} />
+          <h3>{subject.name}</h3>
+          <p>{subject.topics}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section class="portfolio-section home-code" id="code-data-ai">
+    <div class="code-intro">
+      <p class="eyebrow">
+        <Icon name="code" size={22} /> Code, Data & AI
+      </p>
+      <h2>{copy.ai[0]}</h2>
+      <p class="ai-quote">{aiStatement}</p>
+      <p>{copy.ai[2]}</p>
+      <a class="button button-light" href={href("code-data-ai/")}>
+        How I build & what I share <Icon name="arrow" size={17} />
+      </a>
+    </div>
+    <a
+      class="featured-resource"
+      href={href("code-data-ai/indonesian-postal-codes/")}
+    >
+      <div class="data-visual">
+        <Icon name="data" size={62} />
+        <div>
+          <span>CSV / XLSX</span>
+          <span>Python</span>
+          <span>Source validation</span>
+        </div>
+      </div>
+      <p class="eyebrow">Public repository</p>
+      <h3>{resources[0].title}</h3>
+      <p>Original sources, validation checks, and documented limitations.</p>
+      <span class="inline-link">
+        Explore the resource <Icon name="arrow" size={17} />
+      </span>
+    </a>
+  </section>
+  <section class="portfolio-section journal-welcome">
+    <div>
+      <p class="eyebrow">
+        <Icon name="pen" size={22} /> Notes & Perspectives
+      </p>
+      <h2>
+        A space for curiosity,
+        <br />
+        experiments, and everything in between.
+      </h2>
+      <p>{copy.blog[0]}</p>
+      <a class="button" href={href("blog/")}>
+        Visit my digital notebook <Icon name="arrow" size={17} />
+      </a>
+    </div>
+    <div class="journal-topics">
+      {[
+        ["weather", "Science & Research"],
+        ["code", "Technology & AI"],
+        ["book", "Education & Learning"],
+        ["user", "Life & Reflections"],
+      ].map(([icon, label]) => (
+        <a href={href("blog/")}>
+          <Icon name={icon} size={24} />
+          {label}
+          <Icon name="arrow" size={16} />
+        </a>
+      ))}
+      <p>No articles published yet. This space is ready for genuine notes.</p>
+    </div>
+  </section>
 </Base>

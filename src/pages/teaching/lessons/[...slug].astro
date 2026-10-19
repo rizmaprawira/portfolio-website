@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import { href } from "../../../data/site";
+import "katex/dist/katex.min.css";
+export async function getStaticPaths() {
+  return (
+    await getCollection(
+      "lessons",
+      ({ data }) => !data.draft && data.locale === "en",
+    )
+  ).map((lesson) => ({ params: { slug: lesson.id }, props: { lesson } }));
+}
+const { lesson } = Astro.props;
+const { Content } = await render(lesson);
+const related = (
+  await getCollection(
+    "lessons",
+    ({ data, id }) =>
+      !data.draft &&
+      data.locale === "en" &&
+      id !== lesson.id &&
+      data.subject === lesson.data.subject,
+  )
+).slice(0, 3);
+---
+
+<Base
+  title={lesson.data.title}
+  description={lesson.data.description}
+  current="teaching"
+>
+  <article class="reading-content">
+    <p class="eyebrow">
+      {lesson.data.subject} / {lesson.data.topic}
+    </p>
+    <h1>{lesson.data.title}</h1>
+    <p>{lesson.data.description}</p>
+    <Content />
+    {lesson.data.materials.length > 0 && (
+      <section>
+        <h2>Lesson materials</h2>
+        {lesson.data.materials.map((material) => (
+          <p>
+            <a href={material.url}>{material.title}</a>{" "}
+            <small>({material.type})</small>
+          </p>
+        ))}
+      </section>
+    )}
+    {related.length > 0 && (
+      <section>
+        <h2>Related lessons</h2>
+        {related.map((item) => (
+          <p>
+            <a href={href(`teaching/lessons/${item.id}/`)}>{item.data.title}</a>
+          </p>
+        ))}
+      </section>
+    )}
+    <a class="button button-light" href={href("teaching/")}>
+      Back to the learning hub
+    </a>
+  </article>
+</Base>

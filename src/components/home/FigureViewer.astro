@@ -1,20 +1,98 @@
 ---
-import type { ApprovedFigure } from '../../data/scientific-assets';
-import Icon from './Icon.astro';
-interface Props { id: string; title: string; asset: ApprovedFigure; }
+import type { ApprovedFigure } from "../../data/scientific-assets";
+import Icon from "./Icon.astro";
+interface Props {
+  id: string;
+  title: string;
+  asset: ApprovedFigure;
+}
 const { id, title, asset } = Astro.props;
 ---
-<div class="figure-viewer"><button type="button" class="figure-open home-link" data-open-figure={id} aria-label={`Inspect full figure: ${title}`}>Inspect full figure <Icon name="arrow" size={15} /></button><dialog id={id} class="figure-dialog" aria-labelledby={`${id}-title`} aria-describedby={`${id}-caption`}><div class="figure-dialog-top"><h2 id={`${id}-title`}>{title}</h2><form method="dialog"><button type="submit" class="figure-close">Close <span aria-hidden="true">×</span></button></form></div><label class="figure-zoom">Zoom<input type="range" min="100" max="250" step="25" value="100" data-figure-zoom /><output>100%</output></label><div class="figure-scroll" tabindex="0" role="region" aria-label="Scientific figure. Scroll to pan when zoomed."><div class="figure-zoom-target"><img src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading="lazy" /></div></div><p id={`${id}-caption`}>{asset.caption} {asset.sourceLabel}.</p><a href={asset.src} target="_blank" rel="noopener">Open original image in a new tab</a></dialog><noscript><a href={asset.src}>Open full figure</a></noscript></div>
+
+<div class="figure-viewer">
+  <button
+    type="button"
+    class="figure-open home-link"
+    data-open-figure={id}
+    aria-label={`Inspect full figure: ${title}`}
+  >
+    Inspect full figure <Icon name="arrow" size={15} />
+  </button>
+  <dialog
+    id={id}
+    class="figure-dialog"
+    aria-labelledby={`${id}-title`}
+    aria-describedby={`${id}-caption`}
+  >
+    <div class="figure-dialog-top">
+      <h2 id={`${id}-title`}>{title}</h2>
+      <form method="dialog">
+        <button type="submit" class="figure-close">
+          Close <span aria-hidden="true">×</span>
+        </button>
+      </form>
+    </div>
+    <label class="figure-zoom">
+      Zoom
+      <input
+        type="range"
+        min="100"
+        max="250"
+        step="25"
+        value="100"
+        data-figure-zoom
+      />
+      <output>100%</output>
+    </label>
+    <div
+      class="figure-scroll"
+      tabindex="0"
+      role="region"
+      aria-label="Scientific figure. Scroll to pan when zoomed."
+    >
+      <div class="figure-zoom-target">
+        <img
+          src={asset.src}
+          alt={asset.alt}
+          width={asset.width}
+          height={asset.height}
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <p id={`${id}-caption`}>
+      {asset.caption} {asset.sourceLabel}.
+    </p>
+    <a href={asset.src} target="_blank" rel="noopener">
+      Open original image in a new tab
+    </a>
+  </dialog>
+  <noscript>
+    <a href={asset.src}>Open full figure</a>
+  </noscript>
+</div>
 <script>
-  document.querySelectorAll<HTMLButtonElement>('[data-open-figure]').forEach(button => button.addEventListener('click', () => {
-    const dialog = document.getElementById(button.dataset.openFigure!) as HTMLDialogElement | null;
-    if (dialog) dialog.showModal();
-  }));
-  document.querySelectorAll<HTMLInputElement>('[data-figure-zoom]').forEach(input => input.addEventListener('input', () => {
-    const dialog = input.closest('dialog');
-    const target = dialog?.querySelector<HTMLElement>('.figure-zoom-target');
-    const output = dialog?.querySelector('output');
-    if (target) target.style.width = `${input.value}%`;
-    if (output) output.textContent = `${input.value}%`;
-  }));
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-open-figure]")
+    .forEach((button) =>
+      button.addEventListener("click", () => {
+        const dialog = document.getElementById(
+          button.dataset.openFigure!,
+        ) as HTMLDialogElement | null;
+        if (dialog) dialog.showModal();
+      }),
+    );
+  document
+    .querySelectorAll<HTMLInputElement>("[data-figure-zoom]")
+    .forEach((input) =>
+      input.addEventListener("input", () => {
+        const dialog = input.closest("dialog");
+        const target = dialog?.querySelector<HTMLElement>(
+          ".figure-zoom-target",
+        );
+        const output = dialog?.querySelector("output");
+        if (target) target.style.width = `${input.value}%`;
+        if (output) output.textContent = `${input.value}%`;
+      }),
+    );
 </script>

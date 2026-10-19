@@ -1,0 +1,31 @@
+---
+import manifest from "../../data/image-manifest.json";
+import { href } from "../../data/site";
+import Media from "./Media.astro";
+import FigureViewer from "../home/FigureViewer.astro";
+interface Props {
+  name: string;
+  alt: string;
+  caption: string;
+  title: string;
+}
+const { name, alt, caption, title } = Astro.props;
+const asset = manifest.find((item) => item.slug === name)!;
+---
+
+<figure class="portfolio-figure">
+  <Media name={name} alt={alt} />
+  <figcaption>{caption}</figcaption>
+  <FigureViewer
+    id={`view-${name}`}
+    title={title}
+    asset={{
+      src: href(`images/${name}${asset.extension}`),
+      alt,
+      caption,
+      sourceLabel: "Image supplied by Rizma Prawira",
+      width: asset.dimensions[0],
+      height: asset.dimensions[1],
+    }}
+  />
+</figure>

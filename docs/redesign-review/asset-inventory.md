@@ -1,0 +1,18 @@
+# Asset inventory
+
+All eight images in `AssetsToUse/` were inspected recursively; `.DS_Store` is non-media and excluded. Originals are preserved. See the visual contact sheet and JSON for full paths and descriptions.
+
+| File / original path | Size / format | Depicts | Destination | Usage / rights |
+|---|---|---|---|---|
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Potrait.jpeg` | 640 × 640 · JPEG | Portrait; homepage and About. Supplied for use. | Homepage hero; About portrait | Thumbnail and full-size; original complete composition retained. Supplied by owner; attribution details to confirm |
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Senyar Plot.png` | 854 × 902 · PNG | Atmospheric diagnostics and study-area maps; Senyar research. Supplied; formal credit pending. | Research index; Senyar detail | Thumbnail and full-size; original complete composition retained. Supplied by owner; attribution details to confirm |
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Climate Change Extreme Rainfall.png` | 3630 × 2695 · PNG | RP20 ensemble rainfall maps; climate assessment research. Supplied; formal credit pending. | Research index; extreme-precipitation detail | Thumbnail and full-size; original complete composition retained. Supplied by owner; attribution details to confirm |
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Enso Teleconnection.png` | 5823 × 3961 · PNG | Four-panel rainfall correlations, differences, and running correlations; ENSO thesis. P1/P2 date mapping unconfirmed. | Homepage featured research; Research index; ENSO detail | Thumbnail and full-size; original complete composition retained. Supplied by owner; attribution details to confirm |
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Jaring Embun.jpg` | 1600 × 1200 · JPEG | Group photograph associated with fog-harvesting work; About and water-harvesting research. Do not identify people or imply hardware is shown. | Homepage featured research; water-harvesting detail | Thumbnail and full-size; original complete composition retained. Supplied by owner; attribution details to confirm |
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/ENSO in Papua.png` | 914 × 299 · PNG | Two seasonal map panels labeled DJF and JJA; Papua internship research. Supplied; formal credit pending. | Research index; Papua detail | Thumbnail and full-size; original complete composition retained. Supplied by owner; attribution details to confirm |
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Parametric Insurance.png` | 759 × 353 · PNG | Owner-approved public catastrophe-loss figure and map; parametric flood insurance research. | Research index; insurance detail | Thumbnail and full-size; original complete composition retained. Owner explicitly approved public use on 19 October 2026 |
+| `/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Most Outstanding Student.png` | 982 × 691 · PNG | Award certificate; owner explicitly approved keeping the supplied certificate after review. | About / Experience awards | Thumbnail and full-size; original complete composition retained. Owner explicitly approved public use on 19 October 2026 |
+
+## Processing
+
+WebP copies at up to 480, 960, and 1600 pixels wide use proportional resizing only. Scientific figures are lossless; photographs use quality-88 encoding. No plots are cropped, recolored, or re-simulated. Full original images are available through the lightbox and original-image links. Photographs retain natural color. Standalone institutional logo assets, software screenshots, and teaching photographs were not supplied and were not invented. The insurance image and unredacted certificate were explicitly approved by the owner in this chat.

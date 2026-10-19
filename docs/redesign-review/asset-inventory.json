@@ -1,0 +1,122 @@
+[
+  {
+    "filename": "Potrait.jpeg",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Potrait.jpeg",
+    "dimensions": [
+      640,
+      640
+    ],
+    "format": "JPEG",
+    "description": "Portrait; homepage and About. Supplied for use.",
+    "kind": "photo",
+    "slug": "rizma-prawira",
+    "extension": ".jpeg",
+    "use": "Thumbnail and full-size; complete axes/legends preserved",
+    "permission": "Supplied by owner; attribution details to confirm"
+  },
+  {
+    "filename": "Senyar Plot.png",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Senyar Plot.png",
+    "dimensions": [
+      854,
+      902
+    ],
+    "format": "PNG",
+    "description": "Atmospheric diagnostics and study-area maps; Senyar research. Supplied; formal credit pending.",
+    "kind": "figure",
+    "slug": "cyclone-senyar",
+    "extension": ".png",
+    "use": "Thumbnail and full-size; complete axes/legends preserved",
+    "permission": "Supplied by owner; attribution details to confirm"
+  },
+  {
+    "filename": "Climate Change Extreme Rainfall.png",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Climate Change Extreme Rainfall.png",
+    "dimensions": [
+      3630,
+      2695
+    ],
+    "format": "PNG",
+    "description": "RP20 ensemble rainfall maps; climate assessment research. Supplied; formal credit pending.",
+    "kind": "figure",
+    "slug": "extreme-rainfall",
+    "extension": ".png",
+    "use": "Thumbnail and full-size; complete axes/legends preserved",
+    "permission": "Supplied by owner; attribution details to confirm"
+  },
+  {
+    "filename": "Enso Teleconnection.png",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Enso Teleconnection.png",
+    "dimensions": [
+      5823,
+      3961
+    ],
+    "format": "PNG",
+    "description": "Four-panel rainfall correlations, differences, and running correlations; ENSO thesis. P1/P2 date mapping unconfirmed.",
+    "kind": "figure",
+    "slug": "enso-teleconnection",
+    "extension": ".png",
+    "use": "Thumbnail and full-size; complete axes/legends preserved",
+    "permission": "Supplied by owner; attribution details to confirm"
+  },
+  {
+    "filename": "Jaring Embun.jpg",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Jaring Embun.jpg",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "format": "JPEG",
+    "description": "Group photograph associated with fog-harvesting work; About and water-harvesting research. Do not identify people or imply hardware is shown.",
+    "kind": "photo",
+    "slug": "fog-harvesting-team",
+    "extension": ".jpg",
+    "use": "Thumbnail and full-size; complete axes/legends preserved",
+    "permission": "Supplied by owner; attribution details to confirm"
+  },
+  {
+    "filename": "ENSO in Papua.png",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/ENSO in Papua.png",
+    "dimensions": [
+      914,
+      299
+    ],
+    "format": "PNG",
+    "description": "Two seasonal map panels labeled DJF and JJA; Papua internship research. Supplied; formal credit pending.",
+    "kind": "figure",
+    "slug": "papua-enso",
+    "extension": ".png",
+    "use": "Thumbnail and full-size; complete axes/legends preserved",
+    "permission": "Supplied by owner; attribution details to confirm"
+  },
+  {
+    "filename": "Parametric Insurance.png",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Parametric Insurance.png",
+    "dimensions": [
+      759,
+      353
+    ],
+    "format": "PNG",
+    "description": "Owner-approved public catastrophe-loss figure and map; parametric flood insurance research.",
+    "kind": "figure",
+    "slug": "parametric-insurance",
+    "extension": ".png",
+    "use": "Full image and thumbnail; no crop",
+    "permission": "Owner explicitly approved public use on 19 October 2026"
+  },
+  {
+    "filename": "Most Outstanding Student.png",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Most Outstanding Student.png",
+    "dimensions": [
+      982,
+      691
+    ],
+    "format": "PNG",
+    "description": "Award certificate; owner explicitly approved keeping the supplied certificate after review.",
+    "kind": "certificate",
+    "slug": "outstanding-student",
+    "extension": ".png",
+    "use": "Full image and thumbnail; no crop",
+    "permission": "Owner explicitly approved public use on 19 October 2026"
+  }
+]

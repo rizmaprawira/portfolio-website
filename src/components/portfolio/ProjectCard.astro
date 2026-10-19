@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { projectMedia } from "../../data/projects";
+import { href } from "../../data/site";
+import Media from "./Media.astro";
+import Icon from "../home/Icon.astro";
+interface Props {
+  project: CollectionEntry<"research">;
+}
+const { project } = Astro.props;
+const media = projectMedia[project.id];
+---
+
+<article class="portfolio-project">
+  <a
+    class="project-image-link"
+    href={href(`research/${project.id}/`)}
+    aria-label={`Explore ${project.data.title}`}
+  >
+    <Media name={media.image} alt={media.alt} />
+    <span class="image-action">
+      <Icon name="arrow" size={19} />
+    </span>
+  </a>
+  <div class="portfolio-project-copy">
+    <p class="eyebrow">
+      <Icon name="weather" size={18} /> {media.category}{" "}
+      <span>{project.data.period}</span>
+    </p>
+    <h3>
+      <a href={href(`research/${project.id}/`)}>{project.data.title}</a>
+    </h3>
+    <p class="project-context">{project.data.context}</p>
+    <p>{project.body?.trim().split(". ")[0]}.</p>
+    <a class="button button-light" href={href(`research/${project.id}/`)}>
+      Explore the project <Icon name="arrow" size={17} />
+    </a>
+  </div>
+</article>

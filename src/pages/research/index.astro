@@ -1,14 +1,54 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../../layouts/Base.astro';
-import ResearchList from '../../components/ResearchList.astro';
-import { copy } from '../../data/copy';
-import { publications } from '../../data/publications';
-const projects = (await getCollection('research', ({data}) => data.locale === 'en')).sort((a,b) => a.data.order - b.data.order);
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/portfolio/PageHero.astro";
+import ProjectCard from "../../components/portfolio/ProjectCard.astro";
+import { copy } from "../../data/copy";
+import { publications } from "../../data/publications";
+const projects = (
+  await getCollection("research", ({ data }) => data.locale === "en")
+).sort((a, b) => a.data.order - b.data.order);
 ---
-<Base title="Research" description="Research in tropical meteorology, climate variability, atmospheric dynamics, and applied environmental science." current="research">
-  <header class="page-heading margin-section"><p class="section-label">Research & publications</p><div><h1>Understanding a<br />changing atmosphere.</h1><p class="lead">{copy.research[0]}</p></div></header>
-  <section class="margin-section research-statement"><h2 class="section-label">Research interests</h2><div class="reading"><p>{copy.research[1]}</p><p>{copy.research[2]}</p></div></section>
-  <section><div class="section-heading"><h2>Research projects</h2><span class="muted">Selected work, 2024–2026</span></div><ResearchList projects={projects} /></section>
-  <section class="publications"><div class="section-heading"><h2>Publications & preprints</h2></div>{publications.map(pub => <article class="publication margin-section"><p class="entry-meta">{pub.year}<br />{pub.status}</p><div><h3><a href={pub.url}>{pub.title} <span class="external-mark" aria-hidden="true">↗</span></a></h3><p>{pub.authors}</p><p class="muted">{pub.venue}</p></div></article>)}</section>
+
+<Base title="Research" description={copy.research[0]} current="research">
+  <PageHero
+    label="Research & publications"
+    title="Understanding the atmosphere. Exploring its impacts."
+    description={copy.research[0]}
+    icon="weather"
+  />
+  <details class="quiet-details research-intro">
+    <summary>Read my research statement</summary>
+    {copy.research.slice(1).map((p) => (
+      <p>{p}</p>
+    ))}
+  </details>
+  <div class="filter-toolbar">
+    <span>Six research projects</span>
+    <a href="#publications">Publications & preprints</a>
+  </div>
+  <section class="research-gallery" aria-label="Research projects">
+    {projects.map((project) => (
+      <ProjectCard project={project} />
+    ))}
+  </section>
+  <section class="publication-list" id="publications">
+    <h2>Publications & preprints</h2>
+    {publications.map((pub) => (
+      <article class="publication-record">
+        <span>
+          {pub.year}
+          <br />
+          {pub.status}
+        </span>
+        <div>
+          <h3>
+            <a href={pub.url}>{pub.title}</a>
+          </h3>
+          <p>{pub.authors}</p>
+          <p>{pub.venue}</p>
+        </div>
+      </article>
+    ))}
+  </section>
 </Base>

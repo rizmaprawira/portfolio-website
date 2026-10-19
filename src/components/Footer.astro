@@ -1,7 +1,62 @@
 ---
-import { contact, href } from '../data/site';
+import { contact, href } from "../data/site";
+import Icon from "./home/Icon.astro";
 ---
-<footer class="site-footer shell" id="contact">
-  <div class="footer-top"><div><h2>Let’s stay in touch.</h2><p>Curious about science, driven by data,<br />and passionate about sharing knowledge.</p></div><a class="email-link" href={`mailto:${contact.email}`}>{contact.email}</a></div>
-  <div class="footer-bottom"><span>© {new Date().getFullYear()} Rizma Prawira</span><div><a href={contact.github}>GitHub</a><a href={contact.linkedin}>LinkedIn</a><a href={href('blog/rss.xml')}>RSS</a><a href="#top">Back to top ↑</a></div></div>
+
+<footer class="portfolio-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="portfolio-brand" href={href()}>
+        <span class="brand-mark" aria-hidden="true">
+          rp.
+        </span>
+        <span>
+          Rizma Prawira<small>Bandung, Indonesia</small>
+        </span>
+      </a>
+      <p>
+        Curious about science, driven by data, and passionate about sharing
+        knowledge.
+      </p>
+    </div>
+    <div>
+      <h2>Explore</h2>
+      <a href={href("experience/")}>
+        <Icon name="user" size={17} />
+        About & Experience
+      </a>
+      <a href={href("research/")}>
+        <Icon name="weather" size={17} />
+        Research
+      </a>
+      <a href={href("teaching/")}>
+        <Icon name="book" size={17} />
+        Teaching
+      </a>
+    </div>
+    <div>
+      <h2>Keep in touch</h2>
+      <a href={`mailto:${contact.email}`}>
+        <Icon name="mail" size={17} />
+        Email
+      </a>
+      <a href={contact.github}>
+        <Icon name="github" size={17} />
+        GitHub
+      </a>
+      <a href={contact.linkedin}>
+        <Icon name="linkedin" size={17} />
+        LinkedIn
+      </a>
+      <a href={href("blog/rss.xml")}>
+        <Icon name="book" size={17} />
+        Journal RSS
+      </a>
+    </div>
+  </div>
+  <div class="shell portfolio-footer-bottom">
+    <span>© {new Date().getFullYear()} Rizma Prawira</span>
+    <a href={href("cv/")}>CV availability</a>
+    <a href="#top">Back to top ↑</a>
+  </div>
 </footer>

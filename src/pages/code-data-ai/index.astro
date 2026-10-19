@@ -1,0 +1,96 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/portfolio/PageHero.astro";
+import Icon from "../../components/home/Icon.astro";
+import Build from "../../components/home/Build.astro";
+import { resources } from "../../data/home";
+import { href } from "../../data/site";
+import { copy } from "../../data/copy";
+---
+
+<Base title="Code, Data & AI" description={copy.ai[0]} current="code">
+  <PageHero
+    label="Code, Data & AI"
+    title={copy.ai[0]}
+    description={copy.ai[1]}
+    icon="code"
+  />
+  <Build showShelf={false} />
+  <details class="quiet-details research-intro">
+    <summary>More about my approach</summary>
+    {copy.ai.slice(3).map((p) => (
+      <p>{p}</p>
+    ))}
+    <p>
+      I am more confident in applying, adapting, and evaluating code than
+      writing complex software independently from scratch.
+    </p>
+    <p>
+      My strength is using AI-assisted development to bridge the gap between an
+      idea and a usable solution—not claiming to be a conventional software
+      engineer.
+    </p>
+  </details>
+  <section class="profile-section">
+    <h2>Explore the library</h2>
+    <div class="filter-toolbar">
+      <label>
+        Resource type{" "}
+        <select data-resource-filter>
+          <option>All</option>
+          <option>Datasets</option>
+          <option>Scripts & Tools</option>
+          <option>Tutorials & Guides</option>
+        </select>
+      </label>
+      <p class="resource-metadata" aria-live="polite" data-library-count>
+        6 resources
+      </p>
+    </div>
+    <div class="resource-cards">
+      {resources.map((resource) => (
+        <article class="resource-card" data-library-type={resource.type}>
+          <div class="resource-card-icon">
+            <Icon
+              name={
+                resource.type === "Datasets"
+                  ? "data"
+                  : resource.type === "Scripts & Tools"
+                    ? "code"
+                    : "book"
+              }
+              size={36}
+            />
+            <span>{resource.type}</span>
+          </div>
+          <span class="resource-status">{resource.status}</span>
+          <h3>{resource.title}</h3>
+          <p>{resource.description.split(". ")[0]}.</p>
+          <a
+            class="button button-light"
+            href={href(`code-data-ai/${resource.slug}/`)}
+          >
+            Resource details <Icon name="arrow" size={16} />
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+<script>
+  const select = document.querySelector<HTMLSelectElement>(
+    "[data-resource-filter]",
+  );
+  select?.addEventListener("change", () => {
+    let count = 0;
+    document
+      .querySelectorAll<HTMLElement>("[data-library-type]")
+      .forEach((item) => {
+        item.hidden =
+          select.value !== "All" && item.dataset.libraryType !== select.value;
+        if (!item.hidden) count++;
+      });
+    const label = document.querySelector("[data-library-count]");
+    if (label) label.textContent = `${count} resources`;
+  });
+</script>

@@ -1,11 +1,40 @@
 ---
-import { experience } from '../../data/home';
-import Icon from './Icon.astro';
+import { experience } from "../../data/home";
+import Icon from "./Icon.astro";
 ---
-<section class="home-section experience-section" aria-labelledby="experience-heading">
-  <div class="section-intro"><p class="home-label">About / Experience</p><h2 id="experience-heading">A path through<br />science & practice.</h2><p>Selected research and industry experience.</p><a class="home-link" href="#about">About me <Icon name="arrow" size={16} /></a></div>
-  <div class="experience-timeline">{experience.map((entry, index) => <details class="timeline-item" open={index === 0}>
-    <summary><span class="timeline-marker" aria-hidden="true"></span><span class="timeline-copy"><span class="timeline-date">{entry.period}</span><strong>{entry.title}</strong><span>{entry.organization}</span></span><Icon name="plus" size={18} /></summary>
-    <div class="timeline-description"><p>{entry.description}</p></div>
-  </details>)}</div>
+
+<section
+  class="home-section experience-section"
+  aria-labelledby="experience-heading"
+>
+  <div class="section-intro">
+    <p class="home-label">About / Experience</p>
+    <h2 id="experience-heading">
+      A path through
+      <br />
+      science & practice.
+    </h2>
+    <p>Selected research and industry experience.</p>
+    <a class="home-link" href="#about">
+      About me <Icon name="arrow" size={16} />
+    </a>
+  </div>
+  <div class="experience-timeline">
+    {experience.map((entry, index) => (
+      <details class="timeline-item" open={index === 0}>
+        <summary>
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <span class="timeline-copy">
+            <span class="timeline-date">{entry.period}</span>
+            <strong>{entry.title}</strong>
+            <span>{entry.organization}</span>
+          </span>
+          <Icon name="plus" size={18} />
+        </summary>
+        <div class="timeline-description">
+          <p>{entry.description}</p>
+        </div>
+      </details>
+    ))}
+  </div>
 </section>

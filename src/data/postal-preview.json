@@ -1,0 +1,42 @@
+{
+  "source": "https://raw.githubusercontent.com/rizmaprawira/kodepos_indonesia/main/data/final/kodepos_posindonesia.csv",
+  "repository": "https://github.com/rizmaprawira/kodepos_indonesia",
+  "retrieved": "2026-10-19",
+  "rows": [
+    {
+      "Kodepos": "10110",
+      "Desa / Kelurahan": "Gambir",
+      "Kecamatan": "Gambir",
+      "Kota / Kabupaten": "KOTA ADM. JAKARTA PUSAT",
+      "Provinsi": "DKI JAKARTA"
+    },
+    {
+      "Kodepos": "10120",
+      "Desa / Kelurahan": "Kebon Kelapa",
+      "Kecamatan": "Gambir",
+      "Kota / Kabupaten": "KOTA ADM. JAKARTA PUSAT",
+      "Provinsi": "DKI JAKARTA"
+    },
+    {
+      "Kodepos": "10130",
+      "Desa / Kelurahan": "Petojo Utara",
+      "Kecamatan": "Gambir",
+      "Kota / Kabupaten": "KOTA ADM. JAKARTA PUSAT",
+      "Provinsi": "DKI JAKARTA"
+    },
+    {
+      "Kodepos": "10140",
+      "Desa / Kelurahan": "Duri Pulo",
+      "Kecamatan": "Gambir",
+      "Kota / Kabupaten": "KOTA ADM. JAKARTA PUSAT",
+      "Provinsi": "DKI JAKARTA"
+    },
+    {
+      "Kodepos": "10150",
+      "Desa / Kelurahan": "Cideng",
+      "Kecamatan": "Gambir",
+      "Kota / Kabupaten": "KOTA ADM. JAKARTA PUSAT",
+      "Provinsi": "DKI JAKARTA"
+    }
+  ]
+}

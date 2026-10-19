@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/portfolio/PageHero.astro";
+import { subjects } from "../../data/home";
+import { href } from "../../data/site";
+export function getStaticPaths() {
+  return subjects.map((subject) => ({
+    params: { subject: subject.name.toLowerCase().replaceAll(" ", "-") },
+    props: { subject },
+  }));
+}
+const { subject } = Astro.props;
+const lessons = await getCollection(
+  "lessons",
+  ({ data }) =>
+    !data.draft && data.locale === "en" && data.subject === subject.name,
+);
+---
+
+<Base
+  title={`${subject.name} resources`}
+  description={subject.topics}
+  current="teaching"
+>
+  <PageHero
+    label="Learning resource library"
+    title={subject.name}
+    description={subject.topics}
+    icon={subject.icon}
+  />
+  <nav class="learning-path" aria-label="Learning path">
+    <a href={href("teaching/")}>Subjects</a>
+    <span aria-hidden="true">→</span>
+    <span>{subject.name}</span>
+    <span aria-hidden="true">→</span>
+    <span>Topics</span>
+    <span aria-hidden="true">→</span>
+    <span>Lessons & materials</span>
+  </nav>
+  {lessons.length ? (
+    <div class="resource-cards">
+      {lessons.map((lesson) => (
+        <article class="resource-card">
+          <p class="eyebrow">{lesson.data.topic}</p>
+          <h2>
+            <a href={href(`teaching/lessons/${lesson.id}/`)}>
+              {lesson.data.title}
+            </a>
+          </h2>
+          <p>{lesson.data.description}</p>
+        </article>
+      ))}
+    </div>
+  ) : (
+    <section class="subject-empty">
+      <h2>Materials are in preparation.</h2>
+      <p>No public lessons or downloads are available for this subject yet.</p>
+      <p>Planned topics: {subject.topics}.</p>
+    </section>
+  )}
+  <a class="button button-light" href={href("teaching/#tutoring")}>
+    Ask about tutoring
+  </a>
+</Base>

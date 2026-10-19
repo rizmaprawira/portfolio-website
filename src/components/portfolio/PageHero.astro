@@ -1,0 +1,21 @@
+---
+import Icon from "../home/Icon.astro";
+interface Props {
+  title: string;
+  label: string;
+  description?: string;
+  icon: string;
+}
+const { title, label, description, icon } = Astro.props;
+---
+
+<header class="portfolio-page-hero">
+  <span class="category-symbol">
+    <Icon name={icon} size={30} />
+  </span>
+  <div>
+    <p class="eyebrow">{label}</p>
+    <h1>{title}</h1>
+    {description && <p class="page-deck">{description}</p>}
+  </div>
+</header>

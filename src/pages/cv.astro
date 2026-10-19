@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/portfolio/PageHero.astro";
+import { href, contact } from "../data/site";
+---
+
+<Base
+  title="CV"
+  description="CV availability and professional history for Rizma Prawira."
+>
+  <PageHero label="CV" title="A record of my experience." icon="download" />
+  <section class="reading-content">
+    <p>A current CV PDF has not yet been added to this website.</p>
+    <div class="button-row">
+      <a class="button" href={href("experience/")}>
+        View education & experience
+      </a>
+      <a
+        class="button button-light"
+        href={`mailto:${contact.email}?subject=CV%20request`}
+      >
+        Request my CV
+      </a>
+    </div>
+  </section>
+</Base>

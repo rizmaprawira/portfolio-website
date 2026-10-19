@@ -1,0 +1,118 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/portfolio/PageHero.astro";
+import Icon from "../../components/home/Icon.astro";
+import { resources } from "../../data/home";
+import { href } from "../../data/site";
+import preview from "../../data/postal-preview.json";
+export function getStaticPaths() {
+  return resources.map((resource, index) => ({
+    params: { slug: resource.slug },
+    props: { resource, index },
+  }));
+}
+const { resource, index } = Astro.props;
+const columns = index === 0 ? Object.keys(preview.rows[0] ?? {}) : [];
+---
+
+<Base title={resource.title} description={resource.description} current="code">
+  <PageHero
+    label={resource.type}
+    title={resource.title}
+    description={resource.status}
+    icon={resource.type === "Datasets" ? "data" : "code"}
+  />
+  <div class="detail-grid">
+    <article class="detail-copy">
+      <h2>About this resource</h2>
+      <p>{resource.description}</p>
+      {resource.url ? (
+        <>
+          <div class="button-row">
+            <a class="button" href={resource.url}>
+              <Icon name="github" size={19} />
+              Source, usage & documentation
+            </a>
+          </div>
+          <h2>Dataset preview</h2>
+          <p class="resource-metadata">
+            Five actual records from the public repository, retrieved{" "}
+            {preview.retrieved}. This excerpt does not establish nationwide
+            coverage.
+          </p>
+          <div
+            class="dataset-table"
+            tabindex="0"
+            role="region"
+            aria-label="Postal-code dataset sample; scroll horizontally to see all fields"
+          >
+            <table>
+              <thead>
+                <tr>
+                  {columns.map((column) => (
+                    <th scope="col">{column}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {preview.rows.map((row) => (
+                  <tr>
+                    {columns.map((column) => (
+                      <td>
+                        {String((row as Record<string, unknown>)[column] ?? "")}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <a href={preview.source}>View the source CSV</a>
+          </p>
+          <h2>Methodology & limitations</h2>
+          <p>
+            Collection, validation, provenance, and usage instructions are
+            documented in the public repository. Coverage is limited to records
+            returned by the source at collection time.
+          </p>
+        </>
+      ) : (
+        <div class="status-notice">
+          <strong>{resource.status}</strong>
+          <p>
+            No public download, source repository, or release has been supplied
+            for this resource. Methodology, usage instructions, and licensing
+            will be added when the material is ready.
+          </p>
+        </div>
+      )}
+      <h2>AI-assisted development</h2>
+      <p>
+        AI coding assistants are central to my development process. I depend on
+        them extensively for implementation, syntax, debugging, refactoring, and
+        exploring unfamiliar technologies.
+      </p>
+      <a class="button button-light" href={href("code-data-ai/")}>
+        Back to Code, Data & AI
+      </a>
+    </article>
+    <aside class="detail-sidebar">
+      <h2>Resource information</h2>
+      <dl>
+        <dt>Type</dt>
+        <dd>{resource.type}</dd>
+        <dt>Status</dt>
+        <dd>{resource.status}</dd>
+        <dt>Topics & formats</dt>
+        <dd>{resource.metadata}</dd>
+        <dt>Availability</dt>
+        <dd>
+          {resource.url
+            ? "Public repository"
+            : "In preparation; no download yet"}
+        </dd>
+      </dl>
+    </aside>
+  </div>
+</Base>
