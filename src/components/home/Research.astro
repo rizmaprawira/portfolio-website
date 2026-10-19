@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import EnsoComparison from './EnsoComparison.astro';
+import ScientificSlot from './ScientificSlot.astro';
+import Icon from './Icon.astro';
+import { publications } from '../../data/publications';
+import { href } from '../../data/site';
+import { cycloneFigure, climateFigure } from '../../data/scientific-assets';
+interface Props { projects: CollectionEntry<'research'>[]; }
+const { projects } = Astro.props;
+---
+<section id="selected-research" class="home-section featured-research" aria-labelledby="research-heading"><div class="home-section-heading"><div><p class="home-label">Selected research</p><h2 id="research-heading">Questions about<br />a changing atmosphere.</h2></div><a class="home-link" href={href('research/')}>Research & publications <Icon name="arrow" size={16} /></a></div>
+  <div class="research-previews">{projects.map((project,index) => <article class:list={['project-preview', { 'project-preview-wide': index === 2 }]}>
+    {index === 0 ? <EnsoComparison /> : <ScientificSlot variant="research" title={index === 1 ? 'Tropical cyclone dynamics' : 'Extreme precipitation'} asset={index === 1 ? cycloneFigure : climateFigure} />}
+    <div class="project-content"><div class="project-metadata"><span>{project.data.context}</span><span>{project.data.period}</span></div><h3>{project.data.title}</h3><ul class="project-keywords" aria-label="Research topics">{project.data.keywords.slice(0,3).map(keyword => <li>{keyword}</li>)}</ul><details class="project-details"><summary>Project overview <Icon name="plus" size={17} /></summary><p>{project.body?.trim()}</p></details>{index < 2 ? <a class="home-link project-output" href={publications[index].url}>Read the preprint <Icon name="arrow" size={16} /></a> : <a class="home-link project-output" href={href('research/')}>Research overview <Icon name="arrow" size={16} /></a>}</div>
+  </article>)}</div>
+</section>

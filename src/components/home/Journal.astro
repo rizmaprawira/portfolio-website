@@ -1,0 +1,16 @@
+---
+import { categories, href } from '../../data/site';
+import { copy } from '../../data/copy';
+import Icon from './Icon.astro';
+---
+<section class="home-section journal-section" aria-labelledby="journal-heading">
+  <div class="home-section-heading"><div><p class="home-label">The journal</p><h2 id="journal-heading">Notes & Perspectives</h2></div><a class="home-link" href={href('blog/')}>Visit the journal <Icon name="arrow" size={16} /></a></div>
+  <div class="journal-layout"><div><p class="journal-deck">A space for curiosity, experiments, and everything in between.</p><p>{copy.blog[0]}</p><a class="journal-rss" href={href('blog/rss.xml')}>Follow the RSS feed</a></div><div class="journal-browser"><fieldset><legend class="sr-only">Explore journal categories</legend>{categories.map((category,index) => <label><input type="radio" name="home-journal" value={index} checked={index===0} /><span>{category.name}<span aria-hidden="true">↗</span></span></label>)}</fieldset><div class="journal-result" aria-live="polite"><p data-journal-description>{categories[0].description}</p><p class="small-note">No articles published yet.</p></div></div></div>
+</section>
+<script>
+  import { categories } from '../../data/site';
+  document.querySelectorAll<HTMLInputElement>('input[name="home-journal"]').forEach(input => input.addEventListener('change', () => {
+    const description = document.querySelector('[data-journal-description]');
+    if (description) description.textContent = categories[Number(input.value)].description;
+  }));
+</script>

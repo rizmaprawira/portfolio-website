@@ -1,0 +1,12 @@
+---
+import Icon from './Icon.astro';
+import type { ApprovedFigure } from '../../data/scientific-assets';
+import FigureViewer from './FigureViewer.astro';
+/** Asset-only slot. Never synthesize a scientific graphic when no approved asset is supplied. */
+interface Props { variant?: 'hero' | 'research'; title?: string; asset?: ApprovedFigure | null; }
+const { variant = 'hero', title = 'Atmospheric science', asset = null } = Astro.props;
+---
+<figure class:list={['scientific-slot', `scientific-slot-${variant}`]}>
+  <div class="slot-topline"><span>{title}</span><Icon name="wind" size={20} /></div>
+  {asset ? <><img class="approved-figure" src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading={variant === 'hero' ? 'eager' : 'lazy'} /><figcaption>{asset.caption} {asset.sourceUrl ? <a href={asset.sourceUrl}>{asset.sourceLabel}</a> : asset.sourceLabel}</figcaption><FigureViewer id={`figure-${variant}-${title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`} title={title} asset={asset} /></> : <><div class="slot-content"><span class="slot-bracket" aria-hidden="true">[</span><div><Icon name="layers" size={36} /><p>{variant === 'hero' ? 'Atmospheric science' : 'Tropical cyclone research'}<br />Figure to be supplied.</p><span>Awaiting an approved visual</span></div><span class="slot-bracket" aria-hidden="true">]</span></div><figcaption>Visual reserved for supplied material.<br />No simulated data or research results shown.</figcaption></>}
+</figure>

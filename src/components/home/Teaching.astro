@@ -1,0 +1,19 @@
+---
+import { subjects } from '../../data/home';
+import { copy } from '../../data/copy';
+import Icon from './Icon.astro';
+---
+<section id="teaching" class="home-section teaching-section" aria-labelledby="teaching-heading">
+  <div class="home-section-heading"><div><p class="home-label">Teaching & learning</p><h2 id="teaching-heading">{copy.teaching[0]}</h2></div><a class="home-link" href="mailto:rizmaprawira@gmail.com">Discuss private tutoring <Icon name="arrow" size={16} /></a></div>
+  <div class="teaching-layout"><div class="teaching-intro"><p>{copy.teaching[1]}</p><details class="quiet-details"><summary>Teaching experience <Icon name="plus" size={16} /></summary><p>{copy.teaching[2]}</p></details><div class="learning-path" aria-label="Library organization"><span>Subject</span><span aria-hidden="true">→</span><span>Topic</span><span aria-hidden="true">→</span><span>Lesson</span><span aria-hidden="true">→</span><span>Materials</span></div><p class="small-note">The learning library is in preparation.</p></div>
+  <div class="subject-browser"><fieldset><legend>Explore a subject</legend><div class="subject-options">{subjects.map((subject,index) => <label class="subject-choice"><input type="radio" name="home-subject" value={index} checked={index === 0} /><span><Icon name={subject.icon} /><span>{subject.name}</span><span aria-hidden="true">↗</span></span></label>)}</div></fieldset><div class="subject-result" aria-live="polite"><span class="home-label">Planned learning topics</span><h3 data-subject-title>{subjects[0].name}</h3><p data-subject-topics>{subjects[0].topics}</p><p class="small-note">No public lessons available yet.</p></div></div></div>
+</section>
+<script>
+  import { subjects } from '../../data/home';
+  document.querySelectorAll<HTMLInputElement>('input[name="home-subject"]').forEach(input => input.addEventListener('change', () => {
+    const subject = subjects[Number(input.value)];
+    const title = document.querySelector('[data-subject-title]');
+    const topics = document.querySelector('[data-subject-topics]');
+    if (subject && title && topics) { title.textContent = subject.name; topics.textContent = subject.topics; }
+  }));
+</script>

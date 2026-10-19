@@ -1,0 +1,26 @@
+---
+import { aiStatement, workflow, resources } from '../../data/home';
+import { copy } from '../../data/copy';
+import Icon from './Icon.astro';
+---
+<section id="code-data-ai" class="home-section build-section" aria-labelledby="build-heading">
+  <div class="home-section-heading"><div><p class="home-label">Code, Data & AI</p><h2 id="build-heading">{copy.ai[0]}</h2></div><Icon name="code" size={32} /></div>
+  <div class="build-layout"><div class="build-statement"><h3>{aiStatement}</h3><p>{copy.ai[2]}</p><a class="home-link" href="https://github.com/rizmaprawira">Explore GitHub <Icon name="arrow" size={16} /></a></div><div class="workflow-panel"><h3>How I Build With AI</h3><p class="workflow-instruction">Explore the steps in my workflow.</p><fieldset class="workflow-steps"><legend class="sr-only">AI-assisted development workflow</legend>{workflow.map((step,index) => <label><input type="radio" name="home-workflow" value={index} checked={index === 0} /><span><span class="step-number">{String(index+1).padStart(2,'0')}</span><span>{step.title}</span><span aria-hidden="true">↗</span></span></label>)}</fieldset><p class="workflow-description" aria-live="polite" data-workflow-description>{workflow[0].description}</p></div></div>
+  <div class="resource-browser"><div class="resource-browser-heading"><h3>The resource shelf</h3><fieldset class="home-filters"><legend class="sr-only">Filter resources by type</legend>{['All','Datasets','Scripts & Tools','Tutorials & Guides'].map((type,index) => <label><input type="radio" name="home-resource" value={type} checked={index === 0} /><span>{type}</span></label>)}</fieldset></div><p class="sr-only" aria-live="polite" data-resource-count>6 resources</p><div class="resource-list">{resources.map(resource => <details class="resource-item" data-resource-type={resource.type}><summary><Icon name={resource.type === 'Datasets' ? 'data' : resource.type === 'Scripts & Tools' ? 'code' : 'book'} size={20} /><span class="resource-title">{resource.title}</span><span class:list={['resource-status', { 'is-public': resource.url }]}>{resource.status}</span><Icon name="plus" size={16} /></summary><div class="resource-body"><p>{resource.description}</p><p class="small-note">{resource.metadata}</p>{resource.url && <a class="home-link" href={resource.url}>Open repository <Icon name="arrow" size={16} /></a>}</div></details>)}</div></div>
+</section>
+<script>
+  import { workflow } from '../../data/home';
+  document.querySelectorAll<HTMLInputElement>('input[name="home-workflow"]').forEach(input => input.addEventListener('change', () => {
+    const description = document.querySelector('[data-workflow-description]');
+    if (description) description.textContent = workflow[Number(input.value)].description;
+  }));
+  document.querySelectorAll<HTMLInputElement>('input[name="home-resource"]').forEach(input => input.addEventListener('change', () => {
+    let count = 0;
+    document.querySelectorAll<HTMLDetailsElement>('[data-resource-type]').forEach(item => {
+      item.hidden = input.value !== 'All' && item.dataset.resourceType !== input.value;
+      if (!item.hidden) count++;
+    });
+    const status = document.querySelector('[data-resource-count]');
+    if (status) status.textContent = `${count} ${count === 1 ? 'resource' : 'resources'}`;
+  }));
+</script>

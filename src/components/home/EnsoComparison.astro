@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+import FigureViewer from './FigureViewer.astro';
+import { ensoFigure } from '../../data/scientific-assets';
+---
+<div class="enso-comparison">
+  <div class="comparison-heading"><span>ENSO & rainfall</span><Icon name="weather" size={21} /></div>
+  <fieldset class="period-selector"><legend class="sr-only">Select supplied rainfall correlation panel</legend><label><input type="radio" name="enso-period" value="P1" checked /><span>Panel P1</span></label><label><input type="radio" name="enso-period" value="P2" /><span>Panel P2</span></label></fieldset>
+  <div class="enso-map-frame"><div class="enso-map-window" data-enso-panel="P1"><img src={ensoFigure.src} alt="Selected rainfall correlation map from the supplied ENSO figure; P1 is initially selected." width={ensoFigure.width} height={ensoFigure.height} loading="lazy" data-enso-map /></div><div class="enso-legend-window"><img src={ensoFigure.src} alt="Original shared rainfall correlation color scale r from −1 to 1." width={ensoFigure.width} height={ensoFigure.height} loading="lazy" /></div></div>
+  <span class="sr-only" aria-live="polite" data-comparison-period>Panel P1</span>
+  <p class="comparison-caption">Extract from the supplied figure. P1/P2 date labels await confirmation; the original shared color scale is retained.</p>
+  <FigureViewer id="enso-full-figure" title="ENSO–rainfall teleconnections" asset={ensoFigure} />
+</div>
+<script>
+  document.querySelectorAll<HTMLInputElement>('input[name="enso-period"]').forEach(input => input.addEventListener('change', () => {
+    const period = document.querySelector('[data-comparison-period]');
+    if (period) period.textContent = `Panel ${input.value}`;
+    const frame = document.querySelector<HTMLElement>('[data-enso-panel]');
+    const image = document.querySelector<HTMLImageElement>('[data-enso-map]');
+    if (frame) frame.dataset.ensoPanel = input.value;
+    if (image) image.alt = `Rainfall correlation panel ${input.value} extracted from the supplied ENSO figure. Date range awaiting confirmation.`;
+  }));
+</script>

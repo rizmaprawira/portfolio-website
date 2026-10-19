@@ -1,0 +1,21 @@
+{
+  "reports": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "visibleResources": 2,
+      "smallTouchTargets": [],
+      "reducedMotion": "0s",
+      "interactions": "passed"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "visibleResources": 2,
+      "smallTouchTargets": [],
+      "reducedMotion": "0s",
+      "interactions": "passed"
+    }
+  ],
+  "browserErrors": []
+}
