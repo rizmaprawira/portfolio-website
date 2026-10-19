@@ -1,0 +1,11 @@
+# Maintaining the approved interior system
+
+- `Base.astro` loads the shared homepage visual system and the scoped interior stylesheet. All pages use `.v3-site`; pages other than Home also use `.interior-site` and a `data-section` identifying their hub. Keep homepage-only composition rules on their named component classes.
+- `home-v3.css` keeps its historic filename but now contains shared tokens/type/header and approved homepage layouts. `interior.css` adapts hub and detail layouts. Research uses a blue banner; teaching uses red accents/tutoring buttons; blog uses a near-black publication banner. Long prose stays in constrained columns.
+- `Header.astro` uses the shared icon adapter. `home/Icon.astro` maps existing icon names to official Lucide SVGs through `v3/Icon.astro`. GitHub/LinkedIn are legacy brand-link glyphs, not institutional endorsements. SVG license notices remain under `public/icons/lucide/LICENSE`.
+- Research card filtering reads `data-research-category`; the three umbrella groupings are assigned in ProjectCard.astro. Add a new approved project in Markdown and its image in projects.ts, then choose an appropriate filter grouping there. Do not infer project findings from an image.
+- Use Media for proportional responsive photos/figures. Use Figure for full-source scientific viewing. Senyar panel(a) is the sole scientific thumbnail crop; see prepare-images.py and ASSET_CREDITS.md. Both teaching photos have owner permission and are in the manifest.
+- The postal-code source preview is restricted to its actual resource slug; new public tools must not inherit that sample. Keep source-dependent coverage limitations visible.
+- Blog category buttons and the select share one filter function. Keep empty states honest. Article/lesson templates are styled but no sample content is published. Existing Markdown equation/code/caption validation remains the appropriate content renderer check.
+- README documents adding research, datasets, real lessons and articles. New media require source/permission records. Dates, preprint status, formal figure authorship and release availability must come from approved records.
+- A current CV PDF and actual blog/lesson releases are still future content additions. Deployment workflow remains manual and is not part of design approval.

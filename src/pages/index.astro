@@ -10,7 +10,6 @@ import { experience, subjects } from "../data/home";
 import { projectMedia } from "../data/projects";
 import manifest from "../data/image-manifest.json";
 import postal from "../data/postal-preview.json";
-import "../styles/home-v3.css";
 const subjectIcons = [
   "chart-no-axes-column",
   "cloud-rain",
@@ -227,9 +226,7 @@ const subjectSummaries = subjects.map((subject) => subject.topics);
   >
     <div class="v3-experience-intro">
       <p class="v3-kicker">02 / Along the way</p>
-      <h2 id="experience-heading">
-        Research meets practice.
-      </h2>
+      <h2 id="experience-heading">Research meets practice.</h2>
 
       <a class="v3-text-link" href={href("experience/")}>
         About & experience <Icon name="arrow-up-right" size={18} />

@@ -13,13 +13,15 @@ import { href } from "../../data/site";
 <Base title="About & Experience" description={copy.bio[0]} current="about">
   <PageHero
     label="About & Experience"
-    title="A curious mind. A practical approach."
+    title="Science, curiosity & practice."
     icon="user"
   />
   <section class="profile-intro" id="about">
     <div>
       <figure class="portrait-composition">
-        <Media name="rizma-prawira" alt="Portrait of Rizma Prawira." eager />
+        <div class="portrait-photo-frame">
+          <Media name="rizma-prawira" alt="Portrait of Rizma Prawira." eager />
+        </div>
         <figcaption>Rizma Prawira · Bandung, Indonesia</figcaption>
       </figure>
       <a class="button button-light" href={href("contact/")}>

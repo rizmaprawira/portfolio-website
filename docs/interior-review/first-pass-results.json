@@ -1,0 +1,551 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "route": "home",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "experience/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "research/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "research/enso-rainfall/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "research/cyclone-senyar/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "research/papua-enso/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "research/extreme-precipitation/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "research/parametric-insurance/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "research/water-harvesting/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "teaching/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "teaching/statistics/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "teaching/meteorology/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "teaching/mathematics/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "teaching/programming/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "teaching/science/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "teaching/exam-preparation/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/indonesian-postal-codes/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/insurance-financial-reports/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/bmkg-python/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/tel-viz/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/scientific-python/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/ai-research-workflows/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "blog/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "contact/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "cv/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "home",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "experience/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "research/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "research/enso-rainfall/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "research/cyclone-senyar/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "research/papua-enso/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "research/extreme-precipitation/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "research/parametric-insurance/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "research/water-harvesting/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "teaching/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "teaching/statistics/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "teaching/meteorology/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "teaching/mathematics/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "teaching/programming/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "teaching/science/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "teaching/exam-preparation/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/indonesian-postal-codes/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/insurance-financial-reports/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/bmkg-python/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/tel-viz/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/scientific-python/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/ai-research-workflows/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "blog/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "contact/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "cv/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "home",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "experience/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "research/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "research/enso-rainfall/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "research/cyclone-senyar/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "research/papua-enso/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "research/extreme-precipitation/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "research/parametric-insurance/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "research/water-harvesting/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "teaching/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "teaching/statistics/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "teaching/meteorology/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "teaching/mathematics/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "teaching/programming/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "teaching/science/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "teaching/exam-preparation/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/indonesian-postal-codes/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/insurance-financial-reports/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/bmkg-python/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/tel-viz/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/scientific-python/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/ai-research-workflows/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "blog/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "contact/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "cv/",
+      "status": 200,
+      "overflow": false,
+      "brokenImages": 0
+    }
+  ],
+  "errors": []
+}

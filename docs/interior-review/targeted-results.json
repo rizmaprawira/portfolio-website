@@ -1,0 +1,80 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "route": "home",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "route": "experience/",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "route": "blog/",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/indonesian-postal-codes/",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "route": "code-data-ai/insurance-financial-reports/",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "route": "home",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "route": "experience/",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "route": "blog/",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/indonesian-postal-codes/",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "route": "code-data-ai/insurance-financial-reports/",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "route": "home",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "route": "experience/",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "route": "blog/",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/indonesian-postal-codes/",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "route": "code-data-ai/insurance-financial-reports/",
+      "status": 200
+    }
+  ],
+  "errors": []
+}

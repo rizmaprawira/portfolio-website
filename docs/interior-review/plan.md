@@ -1,0 +1,7 @@
+# Approved interior rollout / 19 October 2026
+
+Owner approved the homepage direction and continuing to interior pages. Keep the approved homepage visually stable; extract its visual tokens/header/typography for all routes. White / #181818 / #2458D3 / #DE3D4B, with #C62D3A for small white teaching-button labels, neutral and tint panels. System sans, body 17–18px, metadata >=13px, constrained long-form columns.
+
+Research: blue heading band, two-column figure-led six-project directory with category filter, clear two-preprint section; full original figure + content/details on project pages. About: portrait, complete approved biography, education, expandable full roles, leadership, and certificate/awards; no fake logos. Teaching: large genuine classroom image, brief orientation, subject browser, complete approved assistantship/tutoring details in structured sections. Code/Data/AI: public source table feature, status/type-filtered library, complete transparent AI process/interactive workflow. Blog: four large category symbols, full approved intro disclosure, real post architecture and honest empty state. Contact/CV: useful direct destinations and actual CV availability.
+
+Keep all original claims, insurance figure, and certificate; no AI imagery, fake articles/lessons or deployment. Review screenshots on 1440,768,390, then refine. Verify all routes and interactions and preserve homepage parity.

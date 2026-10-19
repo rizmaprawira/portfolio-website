@@ -6,6 +6,7 @@ import Build from "../../components/home/Build.astro";
 import { resources } from "../../data/home";
 import { href } from "../../data/site";
 import { copy } from "../../data/copy";
+import postal from "../../data/postal-preview.json";
 ---
 
 <Base title="Code, Data & AI" description={copy.ai[0]} current="code">
@@ -15,7 +16,65 @@ import { copy } from "../../data/copy";
     description={copy.ai[1]}
     icon="code"
   />
-  <Build showShelf={false} />
+  <section class="public-data-feature">
+    <div>
+      <p class="eyebrow">
+        <Icon name="data" size={22} />
+        Public repository
+      </p>
+      <h2>
+        Indonesian Postal Code
+        <br />
+        Dataset & Crawler
+      </h2>
+      <p>
+        Postal-code information collected from Pos Indonesia, with structured
+        exports, validation checks, and documented source limitations.
+      </p>
+      <a class="button" href={href("code-data-ai/indonesian-postal-codes/")}>
+        Explore the dataset <Icon name="arrow" size={18} />
+      </a>
+      <a class="inline-link" href={postal.repository}>
+        View GitHub repository <Icon name="arrow" size={18} />
+      </a>
+    </div>
+    <div class="public-data-preview">
+      <p class="eyebrow">Five source records · Gambir, Jakarta Pusat</p>
+      <div
+        class="dataset-table"
+        role="region"
+        tabindex="0"
+        aria-label="Public postal-code source sample"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Postal code</th>
+              <th scope="col">Kelurahan</th>
+              <th scope="col">Kecamatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            {postal.rows.map((row) => (
+              <tr>
+                <td>{row.Kodepos}</td>
+                <td>{row["Desa / Kelurahan"]}</td>
+                <td>{row.Kecamatan}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="resource-metadata">
+        Sample only; source-dependent coverage.{" "}
+        <a href={postal.source}>Original CSV</a>
+      </p>
+    </div>
+  </section>
+  <section class="profile-section">
+    <h2>How I build with AI</h2>
+    <Build showShelf={false} />
+  </section>
   <details class="quiet-details research-intro">
     <summary>More about my approach</summary>
     {copy.ai.slice(3).map((p) => (

@@ -4,6 +4,8 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import "../styles/home.css";
 import "../styles/portfolio.css";
+import "../styles/home-v3.css";
+import "../styles/interior.css";
 import { contact, href } from "../data/site";
 interface Props {
   title: string;
@@ -27,7 +29,7 @@ const person = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#FAFAF8" />
+    <meta name="theme-color" content="#FFFFFF" />
     <title>{title === 'Home' ? 'Rizma Prawira — Atmosphere, data & learning' : `${title} — Rizma Prawira`}</title>
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={href("favicon.svg")} />
@@ -52,9 +54,14 @@ const person = {
   </head>
   <body
     id="top"
-    class:list={["portfolio-site", { "v3-home-page": current === "home" }]}
+    class:list={[
+      "portfolio-site",
+      "v3-site",
+      { "interior-site": current !== "home" },
+    ]}
+    data-section={current ?? "contact"}
   >
-    <Header current={current} homepage={current === "home"} />
+    <Header current={current} />
     <main id="main" class="shell scientific-home" tabindex="-1">
       <slot />
     </main>

@@ -4,20 +4,39 @@ import { projectMedia } from "../../data/projects";
 import { href } from "../../data/site";
 import Media from "./Media.astro";
 import Icon from "../home/Icon.astro";
+import { featuredResearch } from "../../data/home-v3";
 interface Props {
   project: CollectionEntry<"research">;
 }
 const { project } = Astro.props;
 const media = projectMedia[project.id];
+const featured = featuredResearch.find((item) => item.slug === project.id);
+const category = ["enso-rainfall", "cyclone-senyar", "papua-enso"].includes(
+  project.id,
+)
+  ? "Atmosphere & climate"
+  : ["extreme-precipitation", "parametric-insurance"].includes(project.id)
+    ? "Climate risk"
+    : "Environmental technology";
 ---
 
-<article class="portfolio-project">
+<article class="portfolio-project" data-research-category={category}>
   <a
     class="project-image-link"
     href={href(`research/${project.id}/`)}
     aria-label={`Explore ${project.data.title}`}
   >
-    <Media name={media.image} alt={media.alt} />
+    {project.id === "cyclone-senyar" ? (
+      <img
+        src={href("images/cyclone-senyar-panel-a.webp")}
+        alt="Panel (a) excerpt: moisture convergence and 850-hPa vorticity, with original axes and legend. Full figure on project page."
+        width="570"
+        height="282"
+        loading="lazy"
+      />
+    ) : (
+      <Media name={media.image} alt={media.alt} />
+    )}
     <span class="image-action">
       <Icon name="arrow" size={19} />
     </span>
@@ -30,8 +49,13 @@ const media = projectMedia[project.id];
     <h3>
       <a href={href(`research/${project.id}/`)}>{project.data.title}</a>
     </h3>
-    <p class="project-context">{project.data.context}</p>
-    <p>{project.body?.trim().split(". ")[0]}.</p>
+    <p class="project-context">
+      {project.data.context}{" "}
+      {media.publication !== undefined && (
+        <span class="resource-status">Preprint</span>
+      )}
+    </p>
+    <p>{featured?.description ?? `${project.body?.trim().split(". ")[0]}.`}</p>
     <a class="button button-light" href={href(`research/${project.id}/`)}>
       Explore the project <Icon name="arrow" size={17} />
     </a>

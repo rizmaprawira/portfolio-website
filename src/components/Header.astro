@@ -1,21 +1,8 @@
 ---
 import { href, navigation } from "../data/site";
-import LegacyIcon from "./home/Icon.astro";
-import LucideIcon from "./v3/Icon.astro";
-const { current = "home", homepage = false } = Astro.props;
+import Icon from "./home/Icon.astro";
+const { current = "" } = Astro.props;
 const links = navigation;
-const Icon = homepage ? LucideIcon : LegacyIcon;
-const names: Record<string, string> = {
-  home: "house",
-  user: "user-round",
-  weather: "cloud-rain",
-  book: "book-open",
-  code: "code-xml",
-  pen: "notebook-pen",
-  mail: "mail",
-  plus: "plus",
-};
-const iconName = (name: string) => (homepage ? names[name] : name);
 ---
 
 <a class="skip-link" href="#main">
@@ -33,18 +20,18 @@ const iconName = (name: string) => (homepage ? names[name] : name);
   <nav class="desktop-nav" aria-label="Main navigation">
     {links.map(({ key, label, path, icon }) => (
       <a href={href(path)} aria-current={current === key ? "page" : undefined}>
-        <Icon name={iconName(icon)} size={17} />
+        <Icon name={icon} size={17} />
         {label}
       </a>
     ))}
   </nav>
   <a class="header-contact" href={href("contact/")}>
-    <Icon name={iconName("mail")} size={18} />
+    <Icon name="mail" size={18} />
     Contact
   </a>
   <details class="mobile-nav">
     <summary>
-      Menu <Icon name={iconName("plus")} size={19} />
+      Menu <Icon name="plus" size={19} />
     </summary>
     <nav aria-label="Mobile navigation">
       {links.map(({ key, label, path, icon }) => (
@@ -52,12 +39,12 @@ const iconName = (name: string) => (homepage ? names[name] : name);
           href={href(path)}
           aria-current={current === key ? "page" : undefined}
         >
-          <Icon name={iconName(icon)} size={20} />
+          <Icon name={icon} size={20} />
           {label}
         </a>
       ))}
       <a href={href("contact/")}>
-        <Icon name={iconName("mail")} size={20} />
+        <Icon name="mail" size={20} />
         Contact
       </a>
     </nav>

@@ -13,7 +13,7 @@ const projects = (
 <Base title="Research" description={copy.research[0]} current="research">
   <PageHero
     label="Research & publications"
-    title="Understanding the atmosphere. Exploring its impacts."
+    title="Research in the real world."
     description={copy.research[0]}
     icon="weather"
   />
@@ -24,7 +24,18 @@ const projects = (
     ))}
   </details>
   <div class="filter-toolbar">
-    <span>Six research projects</span>
+    <label>
+      Explore by topic{" "}
+      <select data-research-filter>
+        <option>All projects</option>
+        <option>Atmosphere & climate</option>
+        <option>Climate risk</option>
+        <option>Environmental technology</option>
+      </select>
+    </label>
+    <span data-research-count aria-live="polite">
+      6 projects
+    </span>
     <a href="#publications">Publications & preprints</a>
   </div>
   <section class="research-gallery" aria-label="Research projects">
@@ -52,3 +63,22 @@ const projects = (
     ))}
   </section>
 </Base>
+
+<script>
+  const filter = document.querySelector<HTMLSelectElement>(
+    "[data-research-filter]",
+  );
+  filter?.addEventListener("change", () => {
+    let count = 0;
+    document
+      .querySelectorAll<HTMLElement>("[data-research-category]")
+      .forEach((item) => {
+        item.hidden =
+          filter.value !== "All projects" &&
+          item.dataset.researchCategory !== filter.value;
+        if (!item.hidden) count++;
+      });
+    document.querySelector("[data-research-count]")!.textContent =
+      `${count} ${count === 1 ? "project" : "projects"}`;
+  });
+</script>

@@ -1,5 +1,5 @@
-/* Homepage refinement: scoped so interior pages remain untouched. */
-.v3-home-page {
+/* Approved shared visual system and homepage compositions. */
+.v3-site {
   --page: #fff;
   --paper: #fff;
   --ink: #181818;
@@ -18,48 +18,48 @@
   line-height: 1.55;
   font-size: 18px;
 }
-.v3-home-page .shell {
+.v3-site .shell {
   max-width: 1280px;
   padding-inline: 48px;
 }
-.v3-home-page h1,
-.v3-home-page h2,
-.v3-home-page h3 {
+.v3-site h1,
+.v3-site h2,
+.v3-site h3 {
   font-family: var(--sans);
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1.1;
 }
-.v3-home-page h2 {
+.v3-site h2 {
   font-size: 42px;
 }
-.v3-home-page h3 {
+.v3-site h3 {
   font-size: 25px;
 }
-.v3-home-page p {
+.v3-site p {
   color: var(--muted);
 }
-.v3-home-page a:hover {
+.v3-site a:hover {
   color: var(--blue);
 }
-.v3-home-page :focus-visible {
+.v3-site :focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 5px;
 }
-.v3-home-page ::selection {
+.v3-site ::selection {
   background: var(--blue-soft);
   color: var(--ink);
 }
-.v3-home-page .site-header {
+.v3-site .site-header {
   padding-block: 22px;
   gap: 22px;
 }
-.v3-home-page .site-header:after {
+.v3-site .site-header:after {
   left: 48px;
   right: 48px;
   border-color: var(--line);
 }
-.v3-home-page .brand-mark {
+.v3-site .brand-mark {
   font-family: var(--sans);
   font-size: 36px;
   font-weight: 800;
@@ -67,38 +67,38 @@
   width: 48px;
   color: var(--ink);
 }
-.v3-home-page .portfolio-brand {
+.v3-site .portfolio-brand {
   font-size: 15px;
 }
-.v3-home-page .portfolio-brand small {
+.v3-site .portfolio-brand small {
   font-size: 13px;
   color: var(--muted);
 }
-.v3-home-page .desktop-nav {
+.v3-site .desktop-nav {
   font-size: 14px;
   gap: 20px;
 }
-.v3-home-page .desktop-nav a[aria-current] {
+.v3-site .desktop-nav a[aria-current] {
   color: var(--blue);
   text-decoration: none;
   box-shadow: inset 0 -3px var(--blue);
 }
-.v3-home-page .header-contact {
+.v3-site .header-contact {
   font-size: 14px;
   border-color: var(--line);
   border-radius: 6px;
 }
-.v3-home-page .mobile-nav nav {
+.v3-site .mobile-nav nav {
   background: white;
   border-color: var(--line);
   z-index: 20;
 }
-.v3-home-page .v3-icon {
+.v3-site .v3-icon {
   display: inline-block;
   vertical-align: middle;
   flex-shrink: 0;
 }
-.v3-home-page .mobile-nav[open] summary > .v3-icon {
+.v3-site .mobile-nav[open] summary > .v3-icon {
   transform: rotate(45deg);
 }
 .v3-kicker {
@@ -132,7 +132,7 @@
 .v3-hero .v3-kicker > span {
   padding-inline: 8px;
 }
-.v3-home-page .v3-position {
+.v3-site .v3-position {
   font-size: 29px;
   line-height: 1.25;
   font-weight: 500;
@@ -171,7 +171,7 @@
   border-radius: 6px;
   padding: 14px 20px;
 }
-.v3-home-page .v3-button:hover {
+.v3-site .v3-button:hover {
   background: #1844ac;
   color: white;
   transform: translateY(-2px);
@@ -216,7 +216,7 @@
   align-items: center;
   margin-bottom: 24px;
 }
-.v3-home-page .v3-mini-heading h2 {
+.v3-site .v3-mini-heading h2 {
   font-size: 26px;
   letter-spacing: -0.03em;
   margin: 0;
@@ -408,25 +408,25 @@
   flex-wrap: wrap;
 }
 .v3-project-actions .v3-text-link,
-.v3-home-page .v3-project-actions .figure-open {
+.v3-site .v3-project-actions .figure-open {
   font-size: 14px;
   min-height: 44px;
 }
-.v3-home-page .figure-open {
+.v3-site .figure-open {
   color: var(--blue);
   font-family: var(--sans);
 }
-.v3-home-page .figure-dialog {
+.v3-site .figure-dialog {
   max-width: 1100px;
   background: white;
   color: var(--ink);
 }
-.v3-home-page .figure-dialog-top h2 {
+.v3-site .figure-dialog-top h2 {
   font-family: var(--sans);
   font-size: 24px;
 }
-.v3-home-page .figure-dialog > p,
-.v3-home-page .figure-dialog > a {
+.v3-site .figure-dialog > p,
+.v3-site .figure-dialog > a {
   font-size: 14px;
 }
 .v3-proof {
@@ -508,7 +508,7 @@
   border-radius: 4px;
   font-size: 15px;
 }
-.v3-home-page .v3-award:hover {
+.v3-site .v3-award:hover {
   color: white;
   background: #ce303e;
 }
@@ -698,7 +698,7 @@
   color: white;
   border-color: var(--blue);
 }
-.v3-home-page .v3-small {
+.v3-site .v3-small {
   font-size: 14px;
   margin-block: 12px 0;
 }
@@ -812,7 +812,7 @@
 .v3-dataset [hidden] {
   display: none;
 }
-.v3-home-page .v3-data-limitation {
+.v3-site .v3-data-limitation {
   font-size: 13px;
   margin: 6px 0 12px;
 }
@@ -942,12 +942,12 @@
   border-radius: 8px;
   color: white;
 }
-.v3-home-page .v3-contact h2 {
+.v3-site .v3-contact h2 {
   color: white;
   font-size: 48px;
   margin-bottom: 14px;
 }
-.v3-home-page .v3-contact p {
+.v3-site .v3-contact p {
   color: #d5d8de;
   max-width: 350px;
   font-size: 16px;
@@ -978,7 +978,7 @@
   align-items: center;
   min-height: 44px;
 }
-.v3-home-page .v3-contact a:hover {
+.v3-site .v3-contact a:hover {
   color: #b6ceff;
 }
 .v3-credits {
@@ -1013,15 +1013,15 @@
   overflow: hidden;
   clip-path: inset(50%);
 }
-.v3-home-page .skip-link {
+.v3-site .skip-link {
   background: var(--ink);
   color: white;
 }
 @media (max-width: 1100px) {
-  .v3-home-page .header-contact {
+  .v3-site .header-contact {
     display: none;
   }
-  .v3-home-page .desktop-nav {
+  .v3-site .desktop-nav {
     font-size: 13px;
     gap: 15px;
   }
@@ -1031,7 +1031,7 @@
   .v3-hero h1 {
     font-size: 58px;
   }
-  .v3-home-page .v3-position {
+  .v3-site .v3-position {
     font-size: 26px;
   }
   .v3-entries {
@@ -1084,10 +1084,10 @@
   }
 }
 @media (max-width: 850px) {
-  .v3-home-page .shell {
+  .v3-site .shell {
     padding-inline: 30px;
   }
-  .v3-home-page .site-header:after {
+  .v3-site .site-header:after {
     left: 30px;
     right: 30px;
   }
@@ -1098,7 +1098,7 @@
   .v3-hero h1 {
     font-size: 44px;
   }
-  .v3-home-page .v3-position {
+  .v3-site .v3-position {
     font-size: 25px;
   }
   .v3-support {
@@ -1133,7 +1133,7 @@
   .v3-section {
     padding-block: 38px;
   }
-  .v3-home-page h2 {
+  .v3-site h2 {
     font-size: 38px;
   }
   #work > .v3-heading {
@@ -1301,27 +1301,27 @@
   }
 }
 @media (max-width: 600px) {
-  .v3-home-page .shell {
+  .v3-site .shell {
     padding-inline: 22px;
   }
-  .v3-home-page .site-header {
+  .v3-site .site-header {
     padding-block: 17px;
   }
-  .v3-home-page .site-header:after {
+  .v3-site .site-header:after {
     left: 22px;
     right: 22px;
   }
-  .v3-home-page .brand-mark {
+  .v3-site .brand-mark {
     font-size: 33px;
     width: 39px;
   }
-  .v3-home-page .portfolio-brand {
+  .v3-site .portfolio-brand {
     font-size: 14px;
   }
-  .v3-home-page .portfolio-brand small {
+  .v3-site .portfolio-brand small {
     font-size: 12px;
   }
-  .v3-home-page .mobile-nav summary {
+  .v3-site .mobile-nav summary {
     font-size: 14px;
   }
   .v3-hero {
@@ -1383,7 +1383,7 @@
   .v3-mini-heading {
     margin-bottom: 19px;
   }
-  .v3-home-page .v3-mini-heading h2 {
+  .v3-site .v3-mini-heading h2 {
     font-size: 25px;
   }
   .v3-mini-heading > span {
@@ -1421,7 +1421,7 @@
   .v3-section {
     padding-block: 32px;
   }
-  .v3-home-page h2 {
+  .v3-site h2 {
     font-size: 36px;
   }
   .v3-heading {
@@ -1476,7 +1476,7 @@
     gap: 7px 18px;
   }
   .v3-project-actions .v3-text-link,
-  .v3-home-page .v3-project-actions .figure-open {
+  .v3-site .v3-project-actions .figure-open {
     font-size: 14px;
   }
   .v3-proof {
@@ -1688,7 +1688,7 @@
     padding: 27px 22px;
     gap: 20px;
   }
-  .v3-home-page .v3-contact h2 {
+  .v3-site .v3-contact h2 {
     font-size: 42px;
   }
   .v3-contact p:not(.v3-kicker) {
@@ -1715,7 +1715,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .v3-home-page * {
+  .v3-site * {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;

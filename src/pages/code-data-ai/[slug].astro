@@ -6,13 +6,16 @@ import { resources } from "../../data/home";
 import { href } from "../../data/site";
 import preview from "../../data/postal-preview.json";
 export function getStaticPaths() {
-  return resources.map((resource, index) => ({
+  return resources.map((resource) => ({
     params: { slug: resource.slug },
-    props: { resource, index },
+    props: { resource },
   }));
 }
-const { resource, index } = Astro.props;
-const columns = index === 0 ? Object.keys(preview.rows[0] ?? {}) : [];
+const { resource } = Astro.props;
+const columns =
+  resource.slug === "indonesian-postal-codes"
+    ? Object.keys(preview.rows[0] ?? {})
+    : [];
 ---
 
 <Base title={resource.title} description={resource.description} current="code">
@@ -22,6 +25,46 @@ const columns = index === 0 ? Object.keys(preview.rows[0] ?? {}) : [];
     description={resource.status}
     icon={resource.type === "Datasets" ? "data" : "code"}
   />
+  {resource.slug === "indonesian-postal-codes" && (
+    <section class="resource-data-lead" aria-label="Dataset preview">
+      <h2>Dataset preview</h2>
+      <p class="resource-metadata">
+        Five actual records from the public repository, retrieved{" "}
+        {preview.retrieved}. This excerpt does not establish nationwide
+        coverage.
+      </p>
+      <div
+        class="dataset-table"
+        tabindex="0"
+        role="region"
+        aria-label="Postal-code dataset sample; scroll horizontally to see all fields"
+      >
+        <table>
+          <thead>
+            <tr>
+              {columns.map((column) => (
+                <th scope="col">{column}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {preview.rows.map((row) => (
+              <tr>
+                {columns.map((column) => (
+                  <td>
+                    {String((row as Record<string, unknown>)[column] ?? "")}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <a href={preview.source}>View the source CSV</a>
+      </p>
+    </section>
+  )}
   <div class="detail-grid">
     <article class="detail-copy">
       <h2>About this resource</h2>
@@ -34,42 +77,6 @@ const columns = index === 0 ? Object.keys(preview.rows[0] ?? {}) : [];
               Source, usage & documentation
             </a>
           </div>
-          <h2>Dataset preview</h2>
-          <p class="resource-metadata">
-            Five actual records from the public repository, retrieved{" "}
-            {preview.retrieved}. This excerpt does not establish nationwide
-            coverage.
-          </p>
-          <div
-            class="dataset-table"
-            tabindex="0"
-            role="region"
-            aria-label="Postal-code dataset sample; scroll horizontally to see all fields"
-          >
-            <table>
-              <thead>
-                <tr>
-                  {columns.map((column) => (
-                    <th scope="col">{column}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {preview.rows.map((row) => (
-                  <tr>
-                    {columns.map((column) => (
-                      <td>
-                        {String((row as Record<string, unknown>)[column] ?? "")}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p>
-            <a href={preview.source}>View the source CSV</a>
-          </p>
           <h2>Methodology & limitations</h2>
           <p>
             Collection, validation, provenance, and usage instructions are

@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import PageHero from "../../components/portfolio/PageHero.astro";
 import Icon from "../../components/home/Icon.astro";
+import Media from "../../components/portfolio/Media.astro";
 import { copy } from "../../data/copy";
 import { subjects } from "../../data/home";
 import { teachingRoles, tutoring } from "../../data/profile";
@@ -19,12 +20,46 @@ import { href } from "../../data/site";
     description={copy.teaching[0]}
     icon="book"
   />
-  <div class="research-intro">
-    {[copy.teaching[1], copy.teaching[3], copy.teaching[4]].map((p) => (
+  <section class="teaching-welcome">
+    <figure>
+      <Media
+        name="teaching-classroom"
+        alt="Rizma teaching beside a whiteboard and projected atmospheric visualization, with students in the foreground."
+        eager
+      />
+      <figcaption>A classroom moment · Photograph supplied by Rizma</figcaption>
+    </figure>
+    <div>
+      <h2>Learn with me.</h2>
+      <p>{copy.teaching[1]}</p>
+      <nav class="teaching-jumps" aria-label="Teaching destinations">
+        <a href="#library">
+          <Icon name="book" size={26} />
+          Learning resources <Icon name="arrow" size={18} />
+        </a>
+        <a href="#assistantships">
+          <Icon name="science" size={26} />
+          University teaching <Icon name="arrow" size={18} />
+        </a>
+        <a href="#tutoring">
+          <Icon name="user" size={26} />
+          Private tutoring <Icon name="arrow" size={18} />
+        </a>
+      </nav>
+      <a class="button" href="#tutoring">
+        Ask about private tutoring <Icon name="arrow" size={18} />
+      </a>
+    </div>
+  </section>
+  <details class="quiet-details teaching-statement">
+    <summary>
+      My approach to teaching <Icon name="plus" size={19} />
+    </summary>
+    {copy.teaching.slice(2).map((p) => (
       <p>{p}</p>
     ))}
-  </div>
-  <section class="profile-section">
+  </details>
+  <section class="profile-section" id="library">
     <h2>Learning resource library</h2>
     <p>Subject → Topic → Lesson → Materials</p>
     <p class="resource-metadata">
@@ -45,19 +80,30 @@ import { href } from "../../data/site";
       ))}
     </div>
   </section>
-  <section class="profile-section">
+  <section class="profile-section" id="assistantships">
     <h2>Teaching & practical experience</h2>
-    <div class="teaching-role-list">
-      {teachingRoles.map((role, i) => (
-        <article>
-          <Icon name={i === 1 ? "code" : "book"} size={30} />
-          <div>
-            <p class="resource-metadata">{role.period}</p>
-            <h3>{role.title}</h3>
-            <p>{role.description}</p>
-          </div>
-        </article>
-      ))}
+    <div class="assistantship-layout">
+      <figure class="assistantship-photo">
+        <Media
+          name="teaching-classroom-wide"
+          alt="An audience in a classroom facing a teaching presentation, supplied by Rizma."
+        />
+        <figcaption>
+          Teaching & practical learning · Owner-supplied photograph
+        </figcaption>
+      </figure>
+      <div class="teaching-role-list">
+        {teachingRoles.map((role, i) => (
+          <article>
+            <Icon name={i === 1 ? "code" : "book"} size={30} />
+            <div>
+              <p class="resource-metadata">{role.period}</p>
+              <h3>{role.title}</h3>
+              <p>{role.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
   <section class="profile-section" id="tutoring">

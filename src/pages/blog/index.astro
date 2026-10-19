@@ -37,13 +37,19 @@ const posts = (
     </div>
     <div class="journal-topics">
       {categories.map((category, i) => (
-        <div class="journal-category-preview">
-          <Icon name={["weather", "code", "book", "user"][i]} size={26} />
-          <div>
-            <h3>{category.name}</h3>
-            <p>{category.description}</p>
-          </div>
-        </div>
+        <button
+          class="journal-category-preview"
+          type="button"
+          data-category-choice={category.name}
+          aria-pressed="false"
+          aria-label={`Browse ${category.name}`}
+        >
+          <Icon name={["weather", "code", "book", "user"][i]} size={44} />
+          <span>
+            <strong>{category.name}</strong>
+            <span class="category-description">{category.description}</span>
+          </span>
+        </button>
       ))}
     </div>
   </section>
@@ -109,14 +115,14 @@ const posts = (
 <script>
   const select =
     document.querySelector<HTMLSelectElement>("[data-post-filter]");
-  select?.addEventListener("change", () => {
+  function filterPosts() {
     let visible = 0;
     document
       .querySelectorAll<HTMLElement>("[data-post-category]")
       .forEach((item) => {
         item.hidden =
-          select.value !== "All notes" &&
-          item.dataset.postCategory !== select.value;
+          select!.value !== "All notes" &&
+          item.dataset.postCategory !== select!.value;
         if (!item.hidden) visible++;
       });
     const empty = document.querySelector<HTMLElement>("[data-post-empty]");
@@ -124,8 +130,27 @@ const posts = (
     const text = document.querySelector("[data-post-empty-copy]");
     if (text)
       text.textContent =
-        select.value === "All notes"
+        select!.value === "All notes"
           ? "No articles published yet. Future notes will appear here."
-          : `No articles published in ${select.value} yet.`;
-  });
+          : `No articles published in ${select!.value} yet.`;
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-category-choice]")
+      .forEach((button) =>
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.categoryChoice === select?.value),
+        ),
+      );
+  }
+  select?.addEventListener("change", filterPosts);
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-category-choice]")
+    .forEach((button) =>
+      button.addEventListener("click", () => {
+        if (select) {
+          select!.value = button.dataset.categoryChoice!;
+          filterPosts();
+        }
+      }),
+    );
 </script>

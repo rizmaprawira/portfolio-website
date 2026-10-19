@@ -21,7 +21,7 @@ Checked 19 October 2026. This records permission for this portfolio; it does not
 
 - The insurance figure and unredacted certificate were explicitly approved for public use by the owner in this chat.
 - Formal photographer/coauthor credit strings were not provided. Homepage credits use “supplied by Rizma Prawira” rather than inventing authorship. Add precise coauthor/photographer credits when supplied.
-- `Teachings.jpeg` is prepared and inventoried, but the homepage uses only `Teaching.jpeg` as requested when one image is sufficient.
+- `Teaching.jpeg` is used on the homepage and Teaching introduction; `Teachings.jpeg` is used beside the full Teaching assistantship records after owner approval of the interior rollout.
 - `public/figures/` retains earlier copies of the same supplied scientific figures; identical source permissions apply.
 - Browser reference screenshots in `docs/v3-review/reference-*` are local internal design-review records, excluded from Git distribution and from the rendered site. Copyright remains with the respective sites; they are not presented as Rizma's work.
 - Typeface: system Arial/Helvetica/sans-serif stack; no third-party font binaries redistributed.
@@ -33,3 +33,7 @@ Checked 19 October 2026. This records permission for this portfolio; it does not
 | `public/images/cyclone-senyar-panel-a.webp` | User-supplied `AssetsToUse/Senyar Plot.png` | Owner-supplied research figure | Owner explicitly requested a readable genuine panel crop in refinement brief | Exact pixel crop (0,0,570,282), complete panel (a), axes/legend/event markers retained. Lossless WebP; no data/meaningful color edits. Thumbnail labeled as panel (a) excerpt; original multipanel source remains available in viewer. Reproducible in prepare-images.py. | 2026-10-19 |
 
 Lucide `layers.svg` added from https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/layers.svg under the same included ISC/MIT notices. No new external photograph or generated image was used.
+
+## Interior rollout / 19 October 2026
+
+`public/icons/lucide/compass.svg` and `download.svg` are official sources from `https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/` under the included ISC/MIT notices. Existing functional icon aliases now use the same Lucide family across the site. Legacy hand-coded GitHub/LinkedIn marks remain only for brand-link recognition. No standalone institutional logos or new external photographs were added.

@@ -36,7 +36,7 @@ npm run validate:markdown
 - `src/data/image-manifest.json`: supplied asset descriptions and dimensions. Originals are preserved in `AssetsToUse/`; web copies are under `public/images/`.
 - `src/data/postal-preview.json`: five real public CSV records with source URL and retrieval date.
 - `src/components/portfolio/`: shared media, project preview, figure viewer wrapper, and page hero. `src/components/home/` contains reused icon, timeline, workflow, and figure-dialog components.
-- `src/styles/portfolio.css`: the current visual system, layered over shared base styles. Neutral UI, natural image colors, Georgia headings and system sans-serif text, icon-based navigation, portrait introduction, and alternating research rows.
+- `src/styles/home-v3.css`: approved shared white/black/strong-blue/strong-red tokens, sans-serif typography, navigation, and homepage compositions. The historical filename is retained; `.v3-site` is now shared. `src/styles/interior.css` holds distinct interior layouts scoped to `.interior-site`. Older base CSS remains underneath for existing components.
 
 See [design audit](docs/redesign-review/design-audit.md), [asset inventory](docs/redesign-review/asset-inventory.md), [contact sheet](docs/redesign-review/asset-contact-sheet.jpg), and screenshot review under `docs/redesign-review/`.
 
@@ -75,7 +75,7 @@ Add Markdown to `src/content/lessons/`, optionally in nested folders. Required f
 
 ## Images and permissions
 
-Responsive, proportionally resized WebP variants preserve the complete image composition. Scientific figures use lossless encoding; photographs use quality-88 encoding to reduce transfer size. Scientific plot axes, legends, and colors are not cropped or filtered. Original full files remain accessible through keyboard/touch lightboxes, zoom, and original-image links. The owner explicitly approved the parametric-insurance image and keeping the certificate as supplied, including its identifiers and signatures. Other supplied media are used in their indicated context; no people in the project group photo are named or assigned roles.
+Responsive, proportionally resized WebP variants preserve the complete image composition. Scientific figures use lossless encoding; photographs use quality-88 encoding to reduce transfer size. Full scientific originals retain axes, legends, and data colors. The homepage and research index use an explicitly labeled, lossless Senyar panel(a) crop with its complete axes and legend; full original multipanel figure is available on the project page. Original full files remain accessible through keyboard/touch lightboxes, zoom, and original-image links. The owner explicitly approved the parametric-insurance image and keeping the certificate as supplied, including its identifiers and signatures. Other supplied media are used in their indicated context; no people in the project group photo are named or assigned roles.
 
 Formal third-party credits and the P1/P2 year mapping still need confirmation. The supplied labels are retained meanwhile. No invented institutional logos, teaching images, software screenshots, or research plots are used.
 
@@ -87,8 +87,14 @@ English is the only released language. Collection records carry `locale` and opt
 
 ## V3 homepage review checkpoint
 
-The v3 homepage follows `Rizma_Codex_Visual_Redesign_Brief_v3.md` and uses the English DOCX as the factual source. Gate 1 reference matrix and page plan: [docs/v3-review/gate-1.md](docs/v3-review/gate-1.md). Homepage component/tokens guide: [docs/v3-review/maintenance.md](docs/v3-review/maintenance.md). Asset provenance: [ASSET_CREDITS.md](ASSET_CREDITS.md). Final screenshots and browser results are in `docs/v3-review/`. Gate 3 interior redesign is awaiting owner approval. Deployment remains manual and has not been triggered.
+The v3 homepage follows `Rizma_Codex_Visual_Redesign_Brief_v3.md` and uses the English DOCX as the factual source. Gate 1 reference matrix and page plan: [docs/v3-review/gate-1.md](docs/v3-review/gate-1.md). Homepage component/tokens guide: [docs/v3-review/maintenance.md](docs/v3-review/maintenance.md). Asset provenance: [ASSET_CREDITS.md](ASSET_CREDITS.md). Final screenshots and browser results are in `docs/v3-review/`. The owner approved the refined homepage and authorized the interior rollout on 19 October 2026; current interior screenshots and validation are in `docs/interior-review/`. Deployment remains manual and has not been triggered.
 
 ### Homepage refinement checkpoint
 
-Stronger colors, readable type and shorter previews are documented in [docs/refinement-review/report.md](docs/refinement-review/report.md), with before/first-pass/final screenshots and browser results. The owner's latest refinement brief is preserved there. The Senyar panel(a) thumbnail recipe is in `scripts/prepare-images.py`; full originals and interior designs remain intact. Await homepage approval before propagating the system.
+Stronger colors, readable type and shorter previews are documented in [docs/refinement-review/report.md](docs/refinement-review/report.md), with before/first-pass/final screenshots and browser results. The owner's latest refinement brief is preserved there. The Senyar panel(a) thumbnail recipe is in `scripts/prepare-images.py`; full originals and interior designs remain intact. This homepage direction was approved and has now been propagated to the interior pages.
+
+## Approved interior design and review
+
+All 27 HTML routes share the approved palette, type scale, coherent functional Lucide symbols, accessible navigation and figure viewing. Research includes topic filters; Blog category controls synchronize with its select filter; Teaching uses both supplied classroom photos and distinct library/assistantship/tutoring paths; the public postal dataset has a real table before its long description. Complete factual copy remains in its original modules and Markdown.
+
+See [interior implementation/QA](docs/interior-review/report.md) and [maintenance guide](docs/interior-review/maintenance.md). No AI imagery, new scientific results, fake courses/articles or deployment. The current approval covers design implementation; deployment still requires explicit permission.
