@@ -1,0 +1,24 @@
+---
+import { href, ui, locale } from '../data/site';
+const { current = 'home' } = Astro.props;
+const labels = ui[locale];
+const links = [
+  { key: 'home', label: labels.home, url: href() },
+  { key: 'about', label: labels.about, url: href('#about') },
+  { key: 'research', label: labels.research, url: href('research/') },
+  { key: 'teaching', label: labels.teaching, url: href('#teaching') },
+  { key: 'code', label: labels.code, url: href('#code-data-ai') },
+  { key: 'blog', label: labels.blog, url: href('blog/') },
+];
+---
+<a class="skip-link" href="#main">{labels.skip}</a>
+<header class="site-header shell">
+  <div class="nameplate"><a href={href()} aria-label="Rizma Prawira, home">Rizma Prawira<span class="nameplate-dot" aria-hidden="true">.</span></a><span>Atmosphere, data & learning</span></div>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    {links.map(link => <a href={link.url} aria-current={current === link.key ? 'page' : undefined}>{link.label}</a>)}
+  </nav>
+  <details class="mobile-nav">
+    <summary>{labels.menu}<span aria-hidden="true">+</span></summary>
+    <nav aria-label="Mobile navigation">{links.map(link => <a href={link.url} aria-current={current === link.key ? 'page' : undefined}>{link.label}</a>)}</nav>
+  </details>
+</header>

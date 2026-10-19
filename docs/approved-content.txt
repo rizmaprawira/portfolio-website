@@ -1,0 +1,268 @@
+RIZMA PRAWIRA  /  WEBSITE CONTENT
+Approved Website Copy
+English v1.0  |  Implementation-ready content master  |  19 October 2026
+This document consolidates the six sections approved in conversation. Wording is retained wherever practical. It is not a request to complete more worksheets. Content marked PLANNED must not appear as an already released download.
+Suggested navigation
+Home  ·  About / Experience  ·  Research  ·  Teaching  ·  Code, Data & AI  ·  Blog  ·  CV  ·  Contact
+Global editorial rules
+English is the approved content language; a future Indonesian translation may follow.
+Separate published preprints from peer-reviewed publications and distinguish research contributions from project ownership.
+Show planned Code & Data resources as forthcoming until links, permissions, and materials are ready.
+For research/internal industry projects, exclude confidential datasets and employer-owned materials.
+No MITgcm content in this version.
+01 / HOME & ABOUT
+Hero
+Rizma Prawira
+Meteorology Graduate · Researcher · Data Enthusiast · Educator
+Bandung, Indonesia
+Primary headline
+Exploring the Atmosphere, Understanding Data, and Sharing Knowledge.
+Supporting headline
+I work at the intersection of atmospheric science, climate research, data analysis, and education—turning complex information into meaningful insights, practical tools, and accessible learning resources.
+About Me
+Hi, I'm Rizma Prawira, a Meteorology graduate from Institut Teknologi Bandung (ITB), Indonesia, with a background in atmospheric and climate research, scientific data analysis, and education.
+My academic and research experience focuses on understanding atmospheric processes, climate variability, and their impacts on society. I've worked on projects involving ENSO teleconnections, tropical cyclones, climate change, and climate-related risk, combining observational datasets, statistical analysis, and numerical modeling to investigate real-world problems.
+Beyond research, I enjoy exploring how technology can make information more accessible and useful. My interests extend to Python programming, data visualization, automation, and the development of practical tools for scientific and everyday applications.
+Teaching is another important part of my journey. Through university teaching assistantships, practical sessions, and private tutoring, I've helped students navigate topics ranging from statistics and programming to atmospheric science and mathematics.
+I created this website to document my work, share code and educational resources, and write about the things I'm learning and exploring—both within and beyond atmospheric science.
+Featured cards
+Research & Publications
+Homepage featured card
+Explore my research on ENSO–rainfall teleconnections, tropical cyclones, and climate-related risk, including publicly available scientific preprints.
+Teaching & Learning Resources
+Homepage featured card
+Discover my teaching experience, private tutoring services, and a growing collection of tutorials, exercises, and learning materials.
+Code, Data & AI
+Homepage featured card — revised after approval
+Explore datasets, practical tools, and automation projects built through AI-assisted development, guided by domain knowledge and a focus on useful, verifiable results.
+Short tagline
+Curious about science, driven by data, and passionate about sharing knowledge.
+02 / ACADEMIC & PROFESSIONAL HISTORY
+Institut Teknologi Bandung (ITB)
+Bachelor of Science in Meteorology · 2022–2026 · GPA 3.64/4.00 · Minor in Oceanography · Bandung, Indonesia
+My academic training combines atmospheric physics, climate dynamics, statistics, numerical modeling, and scientific programming. My undergraduate research investigates changing ENSO–rainfall relationships over the Maritime Continent, with an emphasis on atmospheric circulation, moisture transport, and climate variability.
+Professional Experience
+Research Assistant
+Department of Meteorology, ITB · Feb–Sep 2026
+Conducted research on tropical cyclones and ENSO teleconnections over the Maritime Continent. Processed atmospheric datasets, performed circulation and moisture diagnostics, developed scientific visualizations, and contributed to research manuscripts.
+Research Project Assistant
+Climate Change Center, ITB · Mar–Sep 2026
+Analyzed climate projections and extreme precipitation for climate-risk assessments. Applied statistical analysis, quality control, and spatial visualization to support research findings and technical reporting.
+Industry Research Intern
+Indonesia Re · Feb–Jun 2026
+Explored parametric flood insurance, catastrophe-risk information, and AI-assisted reporting automation. Worked on translating quantitative analyses into practical insights for insurance applications.
+Research Intern
+National Research and Innovation Agency (BRIN) · Jun–Aug 2025
+Investigated ENSO-related atmospheric variability over Papua Island through climatological wind analysis, meteorological data processing, and scientific visualization.
+Selected Leadership & Organizational Experience
+Head of Human Resources & Development — ITB October Graduation Parade
+Jun–Nov 2024
+Coordinated recruitment, staffing, and development for 600+ volunteers supporting a university-wide graduation event.
+Technology R&D / Content Strategist — BSO Zephyrus ITB
+Mar 2024–Mar 2026
+Contributed to environmental monitoring prototypes, website development, and public-facing meteorology and flood-awareness content.
+Event Organizer — Meteorological Competition, HMME Atmosphaira ITB
+Sep–Dec 2023
+Supported the organization of a meteorological competition and webinar attended by 500+ participants.
+Selected Honors & Awards
+2025
+1st Place — Most Outstanding Student, Faculty of Earth Sciences and Technology, ITB
+2025
+Semifinalist — Most Outstanding Student, ITB
+2025
+Finalist — EXPO Kimia UPI, Generative AI and RAG for Climate Education
+2024
+2nd Place — EXPO Kimia UPI Scientific Paper Competition
+2024
+Silver Medal — Diponegoro Science Competition
+03 / RESEARCH & PUBLICATIONS
+Research overview
+My research interests lie at the intersection of tropical meteorology, climate variability, atmospheric dynamics, and applied environmental science.
+I am particularly interested in understanding how large-scale climate phenomena influence regional weather and rainfall patterns, especially across the Maritime Continent. My work combines observational and reanalysis datasets, statistical methods, atmospheric diagnostics, and numerical modeling to investigate these relationships.
+Beyond fundamental climate research, I have also contributed to projects involving extreme rainfall, climate-risk assessment, parametric insurance, and atmospheric water harvesting. These experiences have strengthened my interest in translating scientific understanding into practical applications that support environmental resilience and decision-making.
+Featured research projects
+Changing ENSO–Rainfall Teleconnections over the Maritime Continent
+Undergraduate thesis · ITB · 2026
+Investigated changes in the relationship between El Niño–Southern Oscillation (ENSO) and boreal-winter rainfall across the Maritime Continent during 1981–2025. Combined rainfall analysis, atmospheric circulation diagnostics, moisture convergence, and idealized numerical experiments to examine the mechanisms behind evolving regional rainfall responses.
+Keywords: Climate Variability · ENSO · Atmospheric Dynamics · Linear Baroclinic Model
+Synoptic Drivers of Tropical Cyclone Senyar
+Research Assistant · ITB · 2026
+Contributed to a collaborative investigation of the atmospheric conditions associated with Tropical Cyclone Senyar and longer-term changes in near-equatorial tropical cyclone activity over the Maritime Continent. Supported meteorological data processing, scientific visualization, and interpretation.
+Keywords: Tropical Cyclones · Synoptic Meteorology · Climate Variability
+ENSO-Related Atmospheric Variability over Papua Island
+Research Internship · BRIN · Jun–Aug 2025
+Examined ENSO-related atmospheric variability over Papua Island using climatological wind datasets and meteorological analysis. Processed and visualized atmospheric data to explore regional circulation patterns and their relationship with large-scale climate variability.
+Keywords: ENSO · Papua · Wind Climatology · Data Analysis
+Climate Change & Extreme Precipitation Assessment
+Climate Change Center ITB · 2026
+Supported climate-risk research through analysis of climate projection datasets and extreme precipitation. Applied quality control, spatial statistics, and return-period analysis to assess rainfall characteristics and communicate results through technical visualizations.
+Keywords: Climate Projections · Extreme Rainfall · Climate Risk
+Parametric Flood Insurance & Climate Risk
+Research Internship · Indonesia Re · 2026
+Explored approaches to parametric flood insurance, focusing on the use of hazard information, catastrophe-model outputs, and event-based triggers to support quantitative risk assessment and insurance applications.
+Keywords: Parametric Insurance · Flood Risk · Catastrophe Modeling
+Atmospheric Water Harvesting & Fog Collection
+Community Research Projects · ITB · 2024–2025
+Contributed to the development of a thermoelectric atmospheric water generator and fog-harvesting prototypes. Also conducted spatial and climatological analyses to support the assessment of fog-harvesting potential in Wonotoro, Probolinggo.
+Keywords: Atmospheric Water · Environmental Technology · Spatial Analysis
+Publications & Preprints
+Strengthening Wet Anomalies over the Maritime Continent during El Niño in Boreal Winter
+2026 · Weather and Climate Dynamics / EGUsphere · Preprint · Manuscript under peer review
+Prawira, R. D., & Abdillah, M. R. Examines the changing ENSO–rainfall relationship over the Maritime Continent and investigates the atmospheric mechanisms associated with strengthening wet anomalies during boreal-winter El Niño events.https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5824/
+Synoptic Drivers of Tropical Cyclone Senyar and Long-term Change in Near-Equatorial Tropical Cyclones over the Maritime Continent
+2026 · ESS Open Archive · Preprint
+Abdillah, M. R., Jannatunnisa, L., Purwadani, N. N., et al. (including Prawira, R. D.). Investigates synoptic-scale atmospheric conditions associated with Tropical Cyclone Senyar and the broader climatological context of near-equatorial tropical cyclone activity.https://doi.org/10.22541/essoar.177248986.68667068/v1
+04 / TEACHING
+Teaching & Learning
+Making complex concepts easier to understand, one step at a time.
+I believe effective teaching goes beyond explaining theories or solving equations. It involves helping students develop confidence, understand underlying concepts, and apply what they learn independently.
+My teaching experience spans university-level teaching and practical assistantships, peer tutoring, private academic tutoring, and Earth Science Olympiad preparation. I have supported students in subjects including statistics, atmospheric science, mathematics, scientific programming, and numerical methods.
+As a teaching and practical assistant at Institut Teknologi Bandung, I have guided undergraduate students through theoretical discussions, computational exercises, and quantitative problem-solving activities.
+Through this website, I also aim to build an accessible collection of educational resources, including lecture notes, video tutorials, coding exercises, and practice problems.
+Teaching experience
+Teaching Assistant — Institut Teknologi Bandung
+2024–2025
+Supported undergraduate theoretical courses through tutorials, problem-solving sessions, and academic guidance. Courses: Climate Change, Dynamical Meteorology, Introduction to Atmospheric Waves, and Numerical Methods for Meteorology.
+Practical Assistant — Institut Teknologi Bandung
+2024–2025
+Guided students in applying statistics, programming, and computational methods to meteorological problems. Courses: Basic Statistics (150+ students), Statistical Meteorology, Computation for Meteorology, Weather and Climate Data Analysis, and Numerical Weather Prediction Method. Tools: Python · R · Fortran.
+Private Academic Tutor & Earth Science Educator
+Freelance · 2024–Present
+Provide individualized academic support in mathematics, statistics, chemistry, introductory programming, and atmospheric science, adapting explanations and exercises to each student's learning needs. Also involved in Earth Science tutoring through Excelsis Learning Center and peer tutoring with HMME Atmosphaira ITB.
+Learn With Me
+Personalized lessons for better understanding and confident problem-solving.
+I offer private tutoring for elementary school, junior high school, senior high school, and university students.
+Whether you need help understanding a difficult topic, preparing for an examination, working through assignments, or learning scientific programming, lessons can be adjusted to your academic level and goals.
+Elementary School: General academic subjects.
+Junior High School: Mathematics, Science, and basic Computer Studies.
+Senior High School: Mathematics, Chemistry, Physics, Computer Studies, and examination preparation.
+University: Basic Statistics, introductory data analysis and programming, foundational mathematics, and Earth Science.
+Academic Competitions: Earth Science Olympiad preparation, with a focus on atmospheric science.
+Lesson formats: Online sessions or in-person tutoring in selected Bandung–Cimahi areas. Scheduling is flexible, and lessons are generally conducted in one-hour sessions.
+Get in touch: Contact me to discuss the subject, academic level, learning objectives, and preferred schedule.
+Learning Resources — proposed categories
+Statistics
+Theory, R, Python, exercises
+Meteorology
+Weather, climate, dynamics
+Mathematics
+Algebra, matrices, calculus
+Programming
+Python, R, Fortran
+Science
+Chemistry, physics, Earth science
+Exam Preparation
+TKA, Olympiad, practice tests
+Teaching highlights
+150+ students supported in Basic Statistics · 9 university courses assisted · Private tutoring since 2024
+05 / CODE, DATA & AI
+Code, Data & AI overview
+Human curiosity. AI-accelerated execution.
+I use artificial intelligence extensively to turn ideas into practical tools, automate repetitive tasks, and solve data-related problems more efficiently.
+My approach to programming is fundamentally AI-assisted. Rather than developing every line of code independently, I rely heavily on AI coding assistants to generate, structure, debug, and refine code. This allows me to focus on defining problems, designing workflows, applying domain knowledge, and evaluating results.
+My background in atmospheric science, statistics, and data analysis helps me understand what a solution needs to accomplish and assess whether its outputs are scientifically or logically sound.
+This section documents the datasets, scripts, applications, and automation workflows I've developed with AI assistance. I share them alongside their sources, methodologies, limitations, and documentation to make the work as transparent and reproducible as possible.
+I see AI not simply as a productivity tool, but as an essential part of how I work, learn, and build.
+How I Build With AI
+I don't code entirely on my own—and I don't pretend to.
+AI coding assistants are central to my development process. I depend on them extensively for implementation, syntax, debugging, refactoring, and exploring unfamiliar technologies.
+Define the problem: Identify objectives, requirements, constraints, and expected outcomes.
+Design the workflow: Determine how data, processes, and components should work together.
+Direct AI implementation: Use iterative prompting and feedback to generate and improve code.
+Evaluate outputs: Inspect results, troubleshoot issues, and test whether solutions meet their intended purpose.
+Apply domain expertise: Use my background in atmospheric science and quantitative analysis to interpret results and recognize potential errors.
+I am more confident in applying, adapting, and evaluating code than writing complex software independently from scratch.
+My strength is using AI-assisted development to bridge the gap between an idea and a usable solution—not claiming to be a conventional software engineer.
+Library categories
+Datasets
+Collected, cleaned, or consolidated data with original sources, field descriptions, and downloads.
+Scripts & Tools
+Reusable Python scripts, automation workflows, and interactive applications.
+Tutorials & Guides
+Step-by-step, reproducible explanations of data acquisition, processing, and visualization.
+Resource entries
+Indonesian Postal Code Dataset & Crawler
+PUBLIC REPOSITORY · Dataset · Web Scraping · Python · CSV/XLSX
+A Python-based data collection workflow for retrieving Indonesian postal-code information from the official Pos Indonesia website. The project transforms extracted records into structured CSV and Excel datasets, implements validation checks, and documents data provenance. The repository includes raw-response replay, integrity checks, duplicate analysis, and processing scripts. Its coverage is limited to the records returned by the source at collection time, rather than independently verified nationwide completeness.https://github.com/rizmaprawira/kodepos_indonesia
+Insurance Financial Reports Dataset
+PLANNED · Financial Data · Data Collection · Excel
+A proposed structured collection of publicly available insurance-company financial reports to support financial comparison, exploratory analysis, and reproducible research. Before publication: confirm reporting periods, company coverage, original sources, and permission to redistribute the collected files.
+Downloading BMKG Data with Python
+PLANNED GUIDE · Meteorological Data · Python
+A practical guide to accessing meteorological data from supported BMKG sources, organizing downloaded records, and preparing them for analysis with Python. The exact access method and examples need to be documented and checked against BMKG usage requirements.
+Tel-Viz: Atmospheric Teleconnection Visualization
+PROJECT DRAFT · Python · GUI · Climate Analysis
+A Python-based graphical application designed to support atmospheric teleconnection analysis and visualization, making selected climate-data workflows more interactive and accessible. Repository, screenshots, and implementation details to be confirmed.
+Scientific Data Processing with Python
+PLANNED COLLECTION · Python · xarray · NetCDF · Visualization
+A growing collection of reusable examples for handling multidimensional atmospheric datasets, calculating anomalies, performing statistical analysis, and producing scientific visualizations. Examples will be selected from shareable work and independently documented.
+AI-Assisted Research & Reporting Workflows
+PLANNED COLLECTION · Automation · Generative AI · Reporting
+Exploration of AI-assisted workflows for collecting information, organizing research, and reducing repetitive reporting tasks while maintaining human verification and quality control. Public examples should be separated from confidential internship materials.
+Project-level development disclosure
+This project was developed through an AI-assisted coding workflow. AI tools supported code generation, debugging, and implementation, while I directed the data-collection objectives, processing requirements, and evaluation of the results.
+My contributions: Problem definition, workflow design, data-source selection, testing, and output evaluation. Use this disclosure only where it accurately describes the specific project.
+Reusable resource-page fields
+Description — what the resource contains and why it was created.
+Data & Methodology — original sources, collection methods, processing, and validation.
+How to Use — requirements, instructions, example code, and expected outputs.
+Downloads & Limitations — files, repository, version, usage rights, and known limitations.
+06 / BLOG
+Notes & Perspectives
+A space for curiosity, experiments, and everything in between.
+Welcome to my little corner of the internet.
+This is where I document things I've learned, ideas I'm exploring, and questions I haven't quite figured out yet.
+Some posts are about atmospheric science, data analysis, and AI-assisted development. Others explore education, technology, personal projects, or experiences that have shaped how I think.
+Not everything here is a research paper or a polished tutorial. Sometimes it's an experiment, an observation, a personal reflection, or simply an interesting question worth writing about.
+I believe learning is an ongoing process, and writing is one way to make sense of it.
+Consider this my digital notebook—open to anyone who might find something useful, interesting, or worth discussing.
+Blog categories
+Science & Research
+Research experiences, atmospheric science, methodologies, and reflections on academic life.
+Technology & AI
+AI-assisted programming, automation, useful digital tools, and building experiments.
+Education & Learning
+Thoughts on teaching, study strategies, educational resources, and explaining ideas.
+Life & Reflections
+Personal experiences, career exploration, university life, opinions, and lessons learned.
+Article ideas (not yet published)
+I Rely on AI to Code—and I’m Fine Being Transparent About It
+What Studying ENSO Taught Me About Climate Research
+From Raw Data to a Usable Dataset: Building an Indonesian Postal Code Collection
+What I Learned from Teaching 150+ Statistics Students
+My Experience as a Research Intern at BRIN
+Why I’m Building My Own Personal Website
+Making Science More Accessible Through Teaching
+Navigating Life Beyond a Meteorology Degree
+Blog post template
+Title · Date · Language · Category · Tags · Estimated reading time
+Introduction — why I decided to write this.
+My experience — what happened, what I tried, and what I observed.
+What I learned — lessons, limitations, and perspectives.
+Closing thoughts — what I think now and what to explore next.
+Optional images, references, and links to related research or code.
+Blog posts may be available in English or Indonesian; they do not require translations. Distinguish personal opinions from tutorials and research commentary.
+07 / IMPLEMENTATION NOTES (not public copy)
+Page routes
+/
+Hero, about, featured research/teaching/code, recent posts
+/experience
+Education, professional roles, organizations, awards
+/research
+Research overview, six project cards, two preprint citations
+/teaching
+Overview, experience, tutoring, proposed resource library
+/code-data-ai
+AI philosophy, three resource categories, six entries
+/blog
+Intro, category filters, posts; do not publish ideas as articles
+/cv · /contact
+CV link if available; email, GitHub, LinkedIn
+Review only when implementing
+Add original profile photo and project figures (no generic generated images as evidence of projects).
+Attach current CV PDF and valid email/contact links.
+Verify public resources, licensing, privacy, and organization approvals before publishing downloads.
+Check publication status before website launch; never relabel a preprint as a peer-reviewed article without confirmation.
+Add bilingual routes later; English copy is approved.
+Keep Blog empty or add a welcome post; do not automatically publish hypothetical article titles.
+Public profile links: https://github.com/rizmaprawira · https://www.linkedin.com/in/rizmaprawira/ · rizmaprawira@gmail.com

@@ -1,0 +1,11 @@
+---
+import { type CollectionEntry } from 'astro:content';
+interface Props { projects: CollectionEntry<'research'>[]; compact?: boolean; }
+const { projects, compact = false } = Astro.props;
+---
+<div class:list={['research-list', { compact }]}>
+  {projects.map(project => <article class="research-entry">
+    <div class="entry-meta"><span>{project.data.context}</span><span>{project.data.period}</span></div>
+    <div><h3>{project.data.title}</h3><p>{project.body?.trim()}</p>{!compact && <ul class="keywords" aria-label="Research topics">{project.data.keywords.map(word => <li>{word}</li>)}</ul>}</div>
+  </article>)}
+</div>

@@ -1,0 +1,22 @@
+---
+import { copy } from '../../data/copy';
+import Base from '../../layouts/Base.astro';
+import { categories, href } from '../../data/site';
+---
+<Base title="Notes & Perspectives" description="A digital notebook on atmospheric science, technology, education, and life by Rizma Prawira." current="blog">
+  <header class="page-heading margin-section"><p class="section-label">The blog</p><div><h1>Notes & Perspectives</h1><p class="lead">A space for curiosity, experiments, and everything in between.</p></div></header>
+  <section class="margin-section journal-intro"><h2 class="section-label">An open notebook</h2><div class="reading"><p class="intro">Welcome to my little corner of the internet.</p><p>{copy.blog[0]}</p><p>{copy.blog[1]}</p><p>{copy.blog[2]}</p><p>{copy.blog[3]}</p><p>{copy.blog[4]}</p></div></section>
+  <section class="journal-archive" aria-labelledby="archive-title"><div class="section-heading"><h2 id="archive-title">The notebook</h2><a href={href('blog/rss.xml')}>RSS feed</a></div><fieldset class="category-filters"><legend>Browse by category</legend><label><input type="radio" name="category" value="All" checked /><span>All notes</span></label>{categories.map(category => <label><input type="radio" name="category" value={category.name} /><span>{category.name}</span></label>)}</fieldset><div class="empty-state" aria-live="polite"><p id="empty-title">The notebook is open.</p><p id="empty-description">No articles published yet. Future notes will appear here.</p></div><div class="category-directory">{categories.map(category => <div><h3>{category.name}</h3><p>{category.description}</p></div>)}</div></section>
+</Base>
+<script>
+  document.querySelectorAll<HTMLInputElement>('input[name="category"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const title = document.getElementById('empty-title');
+      const description = document.getElementById('empty-description');
+      if (title && description) {
+        title.textContent = input.value === 'All' ? 'The notebook is open.' : input.value;
+        description.textContent = input.value === 'All' ? 'No articles published yet. Future notes will appear here.' : 'No articles published in this category yet.';
+      }
+    });
+  });
+</script>

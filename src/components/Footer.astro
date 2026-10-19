@@ -1,0 +1,7 @@
+---
+import { contact, href } from '../data/site';
+---
+<footer class="site-footer shell" id="contact">
+  <div class="footer-top"><div><h2>Let’s stay in touch.</h2><p>Curious about science, driven by data,<br />and passionate about sharing knowledge.</p></div><a class="email-link" href={`mailto:${contact.email}`}>{contact.email}</a></div>
+  <div class="footer-bottom"><span>© {new Date().getFullYear()} Rizma Prawira</span><div><a href={contact.github}>GitHub</a><a href={contact.linkedin}>LinkedIn</a><a href={href('blog/rss.xml')}>RSS</a><a href="#top">Back to top ↑</a></div></div>
+</footer>
