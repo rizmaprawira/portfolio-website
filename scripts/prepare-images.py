@@ -36,3 +36,13 @@ for asset in manifest:
     if source.resolve() != original_copy.resolve():
         shutil.copyfile(source, original_copy)
     print(f"Prepared {asset['slug']} (full composition preserved)")
+
+# Homepage-only scientific excerpt; owner explicitly requested a readable panel crop.
+# Keep axes, title, legend and event markers; full multipanel source is unchanged.
+senyar_source = ROOT / "AssetsToUse" / "Senyar Plot.png"
+if not senyar_source.exists():
+    senyar_source = OUTPUT / "cyclone-senyar.png"
+with Image.open(senyar_source) as senyar:
+    senyar.crop((0, 0, 570, 282)).save(
+        OUTPUT / "cyclone-senyar-panel-a.webp", format="WEBP", lossless=True, method=6
+    )

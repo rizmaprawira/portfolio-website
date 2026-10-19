@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "height": 5712,
+      "checks": "images, alt, overflow, subject keyboard/touch, data filter/reset/empty, timeline, all 3 original figure loads, zoom, Escape/focus restore, mobile menu, reduced motion passed"
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "height": 7005,
+      "checks": "images, alt, overflow, subject keyboard/touch, data filter/reset/empty, timeline, all 3 original figure loads, zoom, Escape/focus restore, mobile menu, reduced motion passed"
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "height": 8930,
+      "checks": "images, alt, overflow, subject keyboard/touch, data filter/reset/empty, timeline, all 3 original figure loads, zoom, Escape/focus restore, mobile menu, reduced motion passed"
+    }
+  ],
+  "errors": []
+}

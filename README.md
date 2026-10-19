@@ -88,3 +88,7 @@ English is the only released language. Collection records carry `locale` and opt
 ## V3 homepage review checkpoint
 
 The v3 homepage follows `Rizma_Codex_Visual_Redesign_Brief_v3.md` and uses the English DOCX as the factual source. Gate 1 reference matrix and page plan: [docs/v3-review/gate-1.md](docs/v3-review/gate-1.md). Homepage component/tokens guide: [docs/v3-review/maintenance.md](docs/v3-review/maintenance.md). Asset provenance: [ASSET_CREDITS.md](ASSET_CREDITS.md). Final screenshots and browser results are in `docs/v3-review/`. Gate 3 interior redesign is awaiting owner approval. Deployment remains manual and has not been triggered.
+
+### Homepage refinement checkpoint
+
+Stronger colors, readable type and shorter previews are documented in [docs/refinement-review/report.md](docs/refinement-review/report.md), with before/first-pass/final screenshots and browser results. The owner's latest refinement brief is preserved there. The Senyar panel(a) thumbnail recipe is in `scripts/prepare-images.py`; full originals and interior designs remain intact. Await homepage approval before propagating the system.

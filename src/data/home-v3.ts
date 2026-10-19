@@ -23,7 +23,7 @@ export const entries = [
   },
   {
     icon: "notebook-pen",
-    title: "Notes & Perspectives",
+    title: "Blog & Notes",
     text: "Things I’m learning, exploring, and thinking about.",
     path: "blog/",
     tone: "neutral",
@@ -32,35 +32,38 @@ export const entries = [
 export const featuredResearch = [
   {
     slug: "enso-rainfall",
+    shortTitle: "Changing ENSO–rainfall connections",
     image: "enso-teleconnection",
     title: "Changing ENSO–Rainfall Teleconnections over the Maritime Continent",
     context: "Undergraduate thesis · ITB · 2026",
     status: "Preprint · under peer review",
     description:
-      "Investigated changes in ENSO and boreal-winter rainfall relationships during 1981–2025, combining rainfall analysis, atmospheric circulation diagnostics, moisture convergence, and idealized numerical experiments.",
+      "Investigating changing ENSO–rainfall relationships across the Maritime Continent during 1981–2025, and the atmospheric mechanisms behind regional rainfall responses.",
   },
   {
     slug: "cyclone-senyar",
+    shortTitle: "Tropical Cyclone Senyar",
     image: "cyclone-senyar",
     title: "Synoptic Drivers of Tropical Cyclone Senyar",
     context: "Research Assistant · ITB · 2026",
     status: "Preprint",
     description:
-      "Contributed to a collaborative investigation of atmospheric conditions associated with Tropical Cyclone Senyar, supporting data processing, scientific visualization, and interpretation.",
+      "Collaborative research into the atmospheric conditions associated with Senyar and changing near-equatorial tropical cyclone activity.",
   },
   {
     slug: "water-harvesting",
+    shortTitle: "Atmospheric water harvesting",
     image: "fog-harvesting-team",
     title: "Atmospheric Water Harvesting & Fog Collection",
     context: "Community research · ITB · 2024–2025",
     status: "Project",
     description:
-      "Contributed to atmospheric water-generator and fog-harvesting prototypes, with spatial and climatological analyses of fog-harvesting potential in Wonotoro, Probolinggo.",
+      "Contributing to atmospheric water-generator and fog-harvesting prototypes, and assessing fog-harvesting potential in Wonotoro, Probolinggo.",
   },
 ];
 export const journalTopics = [
-  ["cloud-rain", "Science & Research"],
-  ["code-xml", "Technology & AI"],
-  ["book-open", "Education & Learning"],
-  ["user-round", "Life & Reflections"],
+  ["cloud-rain", "Science & Research", "Atmosphere, methods & discoveries"],
+  ["code-xml", "Technology & AI", "Tools, code & experiments"],
+  ["book-open", "Education & Learning", "Teaching, ideas & study strategies"],
+  ["user-round", "Life & Reflections", "Experiences & lessons along the way"],
 ];

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "matt",
+    "url": "https://www.mattdavella.com/",
+    "observation": "Portrait dominates opening; restrained palette and concise confident statement.",
+    "desktopCapture": "reference-matt-desktop.png",
+    "mobileCapture": "reference-matt-mobile.png"
+  },
+  {
+    "name": "ali",
+    "url": "https://aliabdaal.com/",
+    "observation": "Cloudflare verification on desktop/mobile; no design observations claimed.",
+    "desktopCapture": "reference-ali-desktop.png",
+    "mobileCapture": "reference-ali-mobile.png"
+  },
+  {
+    "name": "thomas",
+    "url": "https://thomasjfrank.com/",
+    "observation": "Distinct resource families, strong titles and thumbnail entry points.",
+    "desktopCapture": "reference-thomas-desktop.png",
+    "mobileCapture": "reference-thomas-mobile.png"
+  },
+  {
+    "name": "kokbisa",
+    "url": "https://www.kokbisa.id/",
+    "observation": "Confident saturated red, large informative thumbnails, compact approachable copy.",
+    "desktopCapture": "reference-kokbisa-desktop.png",
+    "mobileCapture": "reference-kokbisa-mobile.png"
+  },
+  {
+    "name": "original",
+    "url": "https://rizmaprawira.github.io/careerpage/",
+    "observation": "Owner portrait, familiar symbols and direct destinations. Some mobile reveal content remains hidden after resize.",
+    "desktopCapture": "reference-original-desktop.png",
+    "mobileCapture": "reference-original-mobile.png"
+  },
+  {
+    "name": "current",
+    "url": "http://127.0.0.1:4321/portfolio-website/",
+    "observation": "Baseline screenshot audit: pale small accents, fine metadata, weak achievement hierarchy, long AI prose and unreadable Senyar multipanel thumbnail.",
+    "desktopCapture": "reference-current-desktop.png",
+    "mobileCapture": "reference-current-mobile.png"
+  }
+]

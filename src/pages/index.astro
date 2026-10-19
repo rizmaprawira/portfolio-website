@@ -19,14 +19,7 @@ const subjectIcons = [
   "flask-conical",
   "book-open",
 ];
-const subjectSummaries = [
-  "Theory, R, Python, exercises. University assistantships include Basic Statistics and Statistical Meteorology.",
-  "Weather, climate, dynamics. Teaching assistantships include Climate Change and Dynamical Meteorology.",
-  "Algebra, matrices, calculus. Private lessons can be adjusted to your academic level and goals.",
-  "Python, R, Fortran. Practical assistantships connect computational exercises with meteorological problems.",
-  "Chemistry, physics, Earth science. Private tutoring and Earth Science Olympiad preparation.",
-  "TKA, Olympiad, practice tests. Personalized support for examination preparation and problem-solving.",
-];
+const subjectSummaries = subjects.map((subject) => subject.topics);
 ---
 
 <Base
@@ -42,12 +35,11 @@ const subjectSummaries = [
       <h1 id="hello">
         Rizma Prawira<span>.</span>
       </h1>
-      <p class="v3-role">
-        Meteorology Graduate · Researcher
-        <br /> Data Enthusiast · Educator
+      <p class="v3-position">{copy.headline}</p>
+      <p class="v3-support">
+        Meteorology graduate, researcher, data enthusiast, and educator based in
+        Bandung, Indonesia.
       </p>
-      <h2>{copy.headline}</h2>
-      <p class="v3-support">{copy.supporting}</p>
       <div class="v3-actions">
         <a class="v3-button" href="#work">
           Explore my work <Icon name="arrow-up-right" size={18} />
@@ -67,15 +59,7 @@ const subjectSummaries = [
       </div>
       <figcaption>
         <Icon name="map-pin" size={17} />
-        <span>
-          Rooted in Bandung.
-          <br />
-          <strong>Curious about the world.</strong>
-        </span>
-        <span class="v3-photo-note">
-          Science, data
-          <br />& shared knowledge
-        </span>
+        <span>Bandung, Indonesia · Meteorology, ITB</span>
       </figcaption>
     </figure>
   </section>
@@ -105,11 +89,7 @@ const subjectSummaries = [
     <div class="v3-heading">
       <div>
         <p class="v3-kicker">01 / Research in focus</p>
-        <h2 id="research-heading">
-          Big questions.
-          <br />
-          Real-world connections.
-        </h2>
+        <h2 id="research-heading">Research in the real world.</h2>
       </div>
       <a class="v3-text-link" href={href("research/")}>
         View all research <Icon name="arrow-up-right" size={18} />
@@ -131,13 +111,24 @@ const subjectSummaries = [
                 href={href(`research/${project.slug}/`)}
                 aria-label={`Read project: ${project.title}`}
               >
-                <Media name={project.image} alt={media.alt} />
+                {project.slug === "cyclone-senyar" ? (
+                  <img
+                    src={href("images/cyclone-senyar-panel-a.webp")}
+                    width="570"
+                    height="282"
+                    alt="Panel (a): moisture-flux convergence and 850-hPa vorticity, including the supplied axes, legend, and event markers."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <Media name={project.image} alt={media.alt} />
+                )}
               </a>
               <span class="v3-image-label">
                 {index === 0
                   ? "ENSO / Rainfall"
                   : index === 1
-                    ? "Tropical meteorology"
+                    ? "Tropical meteorology · Panel (a) excerpt"
                     : "Science in the community"}
               </span>
             </div>
@@ -147,7 +138,9 @@ const subjectSummaries = [
                 <span class="v3-badge">{project.status}</span>
               </div>
               <h3>
-                <a href={href(`research/${project.slug}/`)}>{project.title}</a>
+                <a href={href(`research/${project.slug}/`)}>
+                  {project.shortTitle}
+                </a>
               </h3>
               <p>{project.description}</p>
               <div class="v3-project-actions">
@@ -177,33 +170,55 @@ const subjectSummaries = [
     </div>
   </section>
 
-  <section class="v3-proof" aria-label="Selected highlights">
-    <a href={href("research/")}>
-      <Icon name="notebook-pen" size={27} />
-      <div>
-        <strong>2 public preprints</strong>
-        <span>Research shared openly</span>
-      </div>
-      <Icon name="arrow-up-right" size={16} />
-    </a>
-    <a href={href("teaching/")}>
-      <Icon name="book-open" size={27} />
-      <div>
-        <strong>150+ students</strong>
-        <span>Supported in Basic Statistics</span>
-      </div>
-      <Icon name="arrow-up-right" size={16} />
-    </a>
-    <a href={href("experience/")}>
-      <Icon name="graduation-cap" size={29} />
-      <div>
-        <strong>1st place · 2025</strong>
-        <span title="Faculty of Earth Sciences and Technology, ITB">
-          Most Outstanding Student, FITB
+  <section class="v3-proof" aria-labelledby="highlights-heading">
+    <div class="v3-proof-heading">
+      <p class="v3-kicker">A few highlights</p>
+      <h2 id="highlights-heading">Work that adds up.</h2>
+    </div>
+    <div class="v3-proof-grid">
+      <a href={href("research/")}>
+        <Icon name="notebook-pen" size={30} />
+        <strong>2</strong>
+        <span>
+          Public research
+          <br />
+          preprints
         </span>
-      </div>
-      <Icon name="arrow-up-right" size={16} />
-    </a>
+        <Icon name="arrow-up-right" size={19} />
+      </a>
+      <a class="v3-award" href={href("experience/")}>
+        <Icon name="graduation-cap" size={34} />
+        <strong>
+          1st<span>place</span>
+        </strong>
+        <span>
+          Most Outstanding Student
+          <br />
+          FITB ITB · 2025
+        </span>
+        <Icon name="arrow-up-right" size={19} />
+      </a>
+      <a href={href("teaching/")}>
+        <Icon name="book-open" size={30} />
+        <strong>150+</strong>
+        <span>
+          Students guided in
+          <br />
+          Basic Statistics
+        </span>
+        <Icon name="arrow-up-right" size={19} />
+      </a>
+      <a href={href("teaching/")}>
+        <Icon name="layers" size={30} />
+        <strong>9</strong>
+        <span>
+          University courses
+          <br />
+          assisted
+        </span>
+        <Icon name="arrow-up-right" size={19} />
+      </a>
+    </div>
   </section>
 
   <section
@@ -213,11 +228,9 @@ const subjectSummaries = [
     <div class="v3-experience-intro">
       <p class="v3-kicker">02 / Along the way</p>
       <h2 id="experience-heading">
-        Learning through
-        <br />
-        doing.
+        Research meets practice.
       </h2>
-      <p>Research, industry, and the people I learn with.</p>
+
       <a class="v3-text-link" href={href("experience/")}>
         About & experience <Icon name="arrow-up-right" size={18} />
       </a>
@@ -226,7 +239,18 @@ const subjectSummaries = [
       {experience.map((role, index) => (
         <details>
           <summary>
-            <span class="v3-timeline-index">0{index + 1}</span>
+            <span class="v3-timeline-index">
+              <Icon
+                name={
+                  index === 2
+                    ? "briefcase-business"
+                    : index === 3
+                      ? "wind"
+                      : "cloud-rain"
+                }
+                size={24}
+              />
+            </span>
             <span>
               <strong>{role.organization}</strong>
               <span>{role.title}</span>
@@ -234,7 +258,17 @@ const subjectSummaries = [
             <span class="v3-period">{role.period}</span>
             <Icon name="plus" size={18} />
           </summary>
-          <p>{role.description}</p>
+          <p>
+            {
+              [
+                "Tropical cyclones, ENSO teleconnections, atmospheric diagnostics, and scientific visualization.",
+                "Climate projections, extreme precipitation, and climate-risk assessment.",
+                "Parametric flood insurance, catastrophe-risk information, and AI-assisted reporting.",
+                "ENSO-related variability and climatological wind analysis over Papua.",
+              ][index]
+            }{" "}
+            <a href={href("experience/")}>Full experience ↗</a>
+          </p>
         </details>
       ))}
     </div>
@@ -253,19 +287,36 @@ const subjectSummaries = [
     </figure>
     <div class="v3-teaching-copy">
       <p class="v3-kicker">03 / Teaching & learning</p>
-      <h2 id="teaching-heading">{copy.teaching[0]}</h2>
-      <p>{copy.teaching[1]}</p>
-      <div class="v3-actions">
-        <a class="v3-button" href={href("teaching/")}>
-          Explore learning resources <Icon name="arrow-up-right" size={18} />
+      <h2 id="teaching-heading">Learn with me.</h2>
+      <p>Making complex concepts easier to understand, one step at a time.</p>
+      <div class="v3-teaching-paths">
+        <a href={href("teaching/")}>
+          <Icon name="graduation-cap" size={26} />
+          <span>
+            University teaching<small>Theory & practical assistantships</small>
+          </span>
+          <Icon name="arrow-up-right" size={18} />
         </a>
-        <a class="v3-text-link" href={href("contact/")}>
+        <a href={href("contact/")}>
+          <Icon name="user-round" size={26} />
+          <span>
+            Private tutoring<small>Personalized academic support</small>
+          </span>
+          <Icon name="arrow-up-right" size={18} />
+        </a>
+        <a href={href("teaching/")}>
+          <Icon name="book-open" size={26} />
+          <span>
+            Learning resources<small>Library in preparation</small>
+          </span>
+          <Icon name="arrow-up-right" size={18} />
+        </a>
+      </div>
+      <div class="v3-actions">
+        <a class="v3-button" href={href("contact/")}>
           Ask about private tutoring <Icon name="arrow-up-right" size={18} />
         </a>
       </div>
-      <p class="v3-small">
-        9 university courses assisted · Private tutoring since 2024
-      </p>
     </div>
     <div class="v3-learning-browser">
       <div class="v3-learning-top">
@@ -359,8 +410,8 @@ const subjectSummaries = [
             Dataset & Crawler
           </h3>
           <p>
-            Retrieving postal-code information from Pos Indonesia, with
-            structured exports, validation checks, and documented sources.
+            Postal-code records from Pos Indonesia, with structured exports and
+            validation checks.
           </p>
           <label class="v3-search">
             <Icon name="search" size={18} />
@@ -422,7 +473,11 @@ const subjectSummaries = [
           <Icon name="code-xml" size={29} />
         </span>
         <h3>{copy.ai[0]}</h3>
-        <p>{copy.ai[2]}</p>
+        <p>
+          AI coding assistants are central to implementation. I define
+          objectives, design workflows, apply domain knowledge, and check and
+          interpret results.
+        </p>
         <a class="v3-text-link" href={href("code-data-ai/")}>
           How I build with AI <Icon name="arrow-up-right" size={17} />
         </a>
@@ -456,17 +511,23 @@ const subjectSummaries = [
         <br />
         for curiosity.
       </h2>
-      <p>{copy.blog[0]}</p>
+      <p>
+        Things I’m learning, ideas I’m exploring, and questions I’m still
+        figuring out.
+      </p>
       <a class="v3-text-link" href={href("blog/")}>
         Visit my digital notebook <Icon name="arrow-up-right" size={18} />
       </a>
       <span class="v3-journal-status">No articles published yet.</span>
     </div>
     <nav class="v3-journal-topics" aria-label="Blog topics">
-      {journalTopics.map(([icon, title]) => (
+      {journalTopics.map(([icon, title, hint]) => (
         <a href={href("blog/")}>
-          <Icon name={icon} size={25} />
-          <span>{title}</span>
+          <Icon name={icon} size={44} />
+          <span>
+            <strong>{title}</strong>
+            <small>{hint}</small>
+          </span>
           <Icon name="arrow-up-right" size={18} />
         </a>
       ))}
@@ -498,8 +559,9 @@ const subjectSummaries = [
     <summary>Images & credits</summary>
     <p>
       Portrait, research figures, project group photograph, and teaching
-      photograph supplied by Rizma Prawira for this website. Scientific figures
-      retain their original composition and data colors. Icons:{" "}
+      photograph supplied by Rizma Prawira for this website. Full scientific
+      figures retain their original composition and data colors. The Senyar
+      thumbnail shows panel (a); its full original remains in the viewer. Icons:{" "}
       <a href="https://lucide.dev/">Lucide</a>,{" "}
       <a href={href("icons/lucide/LICENSE")}>ISC / MIT license</a>. Dataset
       sample: <a href={postal.source}>owner’s postal-code repository</a>. No

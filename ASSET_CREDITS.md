@@ -1,6 +1,6 @@
 # Asset credits and reuse record
 
-Checked 19 October 2026. This records permission for this portfolio; it does not grant third parties a blanket redistribution license. Owner-supplied images were requested/selected for this website. Original bytes are preserved; web variants resize proportionally. No AI-generated or AI-altered imagery. No reference-site photos, illustrations, logos, or content are reused.
+Checked 19 October 2026. This records permission for this portfolio; it does not grant third parties a blanket redistribution license. Owner-supplied images were requested/selected for this website. Original bytes are preserved; web variants resize proportionally, except the explicitly labeled Senyar panel (a) thumbnail excerpt. No AI-generated or AI-altered imagery. No reference-site photos, illustrations, logos, or content are reused.
 
 | Site file (includes responsive WebP variants) | Original URL or user-supplied source | Creator/source | License / permission | Attribution / conditions | Date checked |
 |---|---|---|---|---|---|
@@ -25,3 +25,11 @@ Checked 19 October 2026. This records permission for this portfolio; it does not
 - `public/figures/` retains earlier copies of the same supplied scientific figures; identical source permissions apply.
 - Browser reference screenshots in `docs/v3-review/reference-*` are local internal design-review records, excluded from Git distribution and from the rendered site. Copyright remains with the respective sites; they are not presented as Rizma's work.
 - Typeface: system Arial/Helvetica/sans-serif stack; no third-party font binaries redistributed.
+
+## Refinement thumbnail / 19 October 2026
+
+| Site file | Source | Creator/source | Permission | Conditions | Date checked |
+|---|---|---|---|---|---|
+| `public/images/cyclone-senyar-panel-a.webp` | User-supplied `AssetsToUse/Senyar Plot.png` | Owner-supplied research figure | Owner explicitly requested a readable genuine panel crop in refinement brief | Exact pixel crop (0,0,570,282), complete panel (a), axes/legend/event markers retained. Lossless WebP; no data/meaningful color edits. Thumbnail labeled as panel (a) excerpt; original multipanel source remains available in viewer. Reproducible in prepare-images.py. | 2026-10-19 |
+
+Lucide `layers.svg` added from https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/layers.svg under the same included ISC/MIT notices. No new external photograph or generated image was used.
