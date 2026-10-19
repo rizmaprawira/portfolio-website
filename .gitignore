@@ -5,3 +5,6 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Third-party reference screenshots: local design review, not site assets.
+docs/v3-review/reference-*.png

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "matt",
+    "url": "https://www.mattdavella.com/",
+    "title": "Matt D'Avella",
+    "observation": "Portrait-led opening, concise bold message, separate evidence section; mobile stacks image and copy.",
+    "limitation": null,
+    "localDesktopCapture": "reference-matt-desktop.png",
+    "localMobileCapture": "reference-matt-mobile.png"
+  },
+  {
+    "name": "thomas",
+    "url": "https://thomasjfrank.com/",
+    "title": "Thomas Frank \u2013 YouTuber, Notion Nerd, Entrepreneur",
+    "observation": "Portrait split, distinct resource families, thumbnail-led entry points; mobile preserves topic hierarchy.",
+    "limitation": null,
+    "localDesktopCapture": "reference-thomas-desktop.png",
+    "localMobileCapture": "reference-thomas-mobile.png"
+  },
+  {
+    "name": "kokbisa",
+    "url": "https://www.kokbisa.id/",
+    "title": "Kok Bisa | Baca Cerita Sains & Teknologi Paling Gila! \u26a1",
+    "observation": "Large thumbnail-title pairs with brief descriptions and metadata; stacked image-first mobile entries.",
+    "limitation": null,
+    "localDesktopCapture": "reference-kokbisa-desktop.png",
+    "localMobileCapture": "reference-kokbisa-mobile.png"
+  },
+  {
+    "name": "original",
+    "url": "https://rizmaprawira.github.io/careerpage/",
+    "title": "About Rizma",
+    "observation": "Genuine owner image, familiar category symbols and project photos; older reveal animations need scrolling.",
+    "limitation": null,
+    "localDesktopCapture": "reference-original-desktop.png",
+    "localMobileCapture": "reference-original-mobile.png"
+  },
+  {
+    "name": "current",
+    "url": "http://127.0.0.1:4321/portfolio-website/",
+    "title": "Rizma Prawira \u2014 Atmosphere, data & learning",
+    "observation": "Repeated category paths and similar research rows; serif hierarchy and neutral panels flatten content differences.",
+    "limitation": null,
+    "localDesktopCapture": "reference-current-desktop.png",
+    "localMobileCapture": "reference-current-mobile.png"
+  },
+  {
+    "name": "ali",
+    "url": "https://aliabdaal.com/",
+    "title": null,
+    "observation": "Cloudflare security verification only. No site design observed.",
+    "limitation": "Desktop and mobile browser visits displayed Cloudflare security verification. Reference screenshots show access limitation; no site content observed.",
+    "localDesktopCapture": "reference-ali-desktop.png",
+    "localMobileCapture": "reference-ali-mobile.png"
+  }
+]

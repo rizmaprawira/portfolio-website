@@ -50,11 +50,23 @@ const person = {
     <meta property="og:image:alt" content="Portrait of Rizma Prawira" />
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
   </head>
-  <body id="top" class="portfolio-site">
-    <Header current={current} />
+  <body
+    id="top"
+    class:list={["portfolio-site", { "v3-home-page": current === "home" }]}
+  >
+    <Header current={current} homepage={current === "home"} />
     <main id="main" class="shell scientific-home" tabindex="-1">
       <slot />
     </main>
-    <Footer />
+    {current === "home" ? (
+      <footer class="v3-footer shell">
+        <span>© {new Date().getFullYear()} Rizma Prawira</span>
+        <a href="#image-credits">Images & credits</a>
+        <a href={href("blog/rss.xml")}>RSS</a>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    ) : (
+      <Footer />
+    )}
   </body>
 </html>

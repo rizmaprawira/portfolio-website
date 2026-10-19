@@ -1,237 +1,544 @@
 ---
-import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
-import Icon from "../components/home/Icon.astro";
+import Icon from "../components/v3/Icon.astro";
 import Media from "../components/portfolio/Media.astro";
-import ProjectCard from "../components/portfolio/ProjectCard.astro";
+import FigureViewer from "../components/home/FigureViewer.astro";
 import { copy } from "../data/copy";
-import { href } from "../data/site";
-import { subjects, resources, aiStatement } from "../data/home";
-const projects = (await getCollection("research"))
-  .filter((p) =>
-    ["enso-rainfall", "cyclone-senyar", "water-harvesting"].includes(p.id),
-  )
-  .sort((a, b) => a.data.order - b.data.order);
-const shortcuts = [
-  ["weather", "Research", "research/"],
-  ["book", "Teaching", "teaching/"],
-  ["code", "Code, Data & AI", "code-data-ai/"],
-  ["pen", "Notes & Perspectives", "blog/"],
+import { href, contact } from "../data/site";
+import { entries, featuredResearch, journalTopics } from "../data/home-v3";
+import { experience, subjects } from "../data/home";
+import { projectMedia } from "../data/projects";
+import manifest from "../data/image-manifest.json";
+import postal from "../data/postal-preview.json";
+import "../styles/home-v3.css";
+const subjectIcons = [
+  "chart-no-axes-column",
+  "cloud-rain",
+  "sigma",
+  "code-xml",
+  "flask-conical",
+  "book-open",
+];
+const subjectSummaries = [
+  "Theory, R, Python, exercises. University assistantships include Basic Statistics and Statistical Meteorology.",
+  "Weather, climate, dynamics. Teaching assistantships include Climate Change and Dynamical Meteorology.",
+  "Algebra, matrices, calculus. Private lessons can be adjusted to your academic level and goals.",
+  "Python, R, Fortran. Practical assistantships connect computational exercises with meteorological problems.",
+  "Chemistry, physics, Earth science. Private tutoring and Earth Science Olympiad preparation.",
+  "TKA, Olympiad, practice tests. Personalized support for examination preparation and problem-solving.",
 ];
 ---
 
 <Base
   title="Home"
-  description="Rizma Prawira — meteorology graduate, researcher, data enthusiast, and educator."
+  description="Rizma Prawira — meteorology graduate, researcher, data enthusiast, and educator in Bandung, Indonesia."
   current="home"
 >
-  <section class="welcome-hero">
-    <div class="welcome-copy">
-      <p class="eyebrow">Hello, I'm</p>
-      <h1>Rizma Prawira.</h1>
-      <p class="professional-line">
-        Meteorology Graduate · Researcher · Data Enthusiast · Educator
+  <section class="v3-hero" aria-labelledby="hello">
+    <div class="v3-hero-copy">
+      <p class="v3-kicker">
+        Hello, I’m <span aria-hidden="true">/</span> Bandung, Indonesia
+      </p>
+      <h1 id="hello">
+        Rizma Prawira<span>.</span>
+      </h1>
+      <p class="v3-role">
+        Meteorology Graduate · Researcher
+        <br /> Data Enthusiast · Educator
       </p>
       <h2>{copy.headline}</h2>
-      <p>{copy.supporting}</p>
-      <div class="button-row">
-        <a class="button" href={href("research/")}>
-          <Icon name="weather" size={19} />
-          Explore my work
+      <p class="v3-support">{copy.supporting}</p>
+      <div class="v3-actions">
+        <a class="v3-button" href="#work">
+          Explore my work <Icon name="arrow-up-right" size={18} />
         </a>
-        <a class="button button-light" href={href("contact/")}>
-          <Icon name="mail" size={19} />
-          Let’s connect
+        <a class="v3-text-link" href={href("teaching/")}>
+          Learn with me <Icon name="arrow-up-right" size={18} />
         </a>
       </div>
     </div>
-    <figure class="portrait-composition">
-      <Media
-        name="rizma-prawira"
-        alt="Rizma Prawira smiling with her arms crossed."
-        eager
-      />
+    <figure class="v3-portrait">
+      <div class="v3-portrait-frame">
+        <Media
+          name="rizma-prawira"
+          alt="Rizma Prawira smiling with her arms crossed."
+          eager
+        />
+      </div>
       <figcaption>
-        <Icon name="compass" size={20} />
+        <Icon name="map-pin" size={17} />
         <span>
-          Based in Bandung, Indonesia
-          <small>Curious about science. Open to learning.</small>
+          Rooted in Bandung.
+          <br />
+          <strong>Curious about the world.</strong>
+        </span>
+        <span class="v3-photo-note">
+          Science, data
+          <br />& shared knowledge
         </span>
       </figcaption>
     </figure>
   </section>
-  <nav class="category-shortcuts" aria-label="Explore my website">
-    {shortcuts.map(([icon, label, path]) => (
-      <a href={href(path)}>
-        <span class="shortcut-icon">
-          <Icon name={icon} size={25} />
-        </span>
-        <span>{label}</span>
-        <Icon name="arrow" size={17} />
-      </a>
-    ))}
-  </nav>
-  <section class="portfolio-section about-preview" id="about">
-    <div class="section-title">
-      <p class="eyebrow">A glimpse into my work</p>
-      <h2>
-        Science, useful tools,
-        <br />
-        and shared knowledge.
-      </h2>
-      <p>{copy.bio[0]}</p>
+
+  <section class="v3-entry-section" aria-labelledby="what-i-do">
+    <div class="v3-mini-heading">
+      <h2 id="what-i-do">What I do</h2>
+      <span>Choose a starting point</span>
     </div>
-    <div class="interest-features">
-      {[
-        [
-          "weather",
-          "Research & Publications",
-          "Explore my research on ENSO–rainfall teleconnections, tropical cyclones, and climate-related risk, including publicly available scientific preprints.",
-          "research/",
-        ],
-        [
-          "book",
-          "Teaching & Learning Resources",
-          "Discover my teaching experience, private tutoring services, and a growing collection of tutorials, exercises, and learning materials.",
-          "teaching/",
-        ],
-        [
-          "code",
-          "Code, Data & AI",
-          "Explore datasets, practical tools, and automation projects built through AI-assisted development, guided by domain knowledge and a focus on useful, verifiable results.",
-          "code-data-ai/",
-        ],
-      ].map(([icon, title, text, path]) => (
-        <article>
-          <Icon name={icon} size={34} />
-          <h3>{title}</h3>
-          <p>{text}</p>
-          <a class="inline-link" href={href(path)}>
-            Explore <Icon name="arrow" size={17} />
-          </a>
-        </article>
+    <nav class="v3-entries" aria-label="Explore my work by area">
+      {entries.map((entry) => (
+        <a class={`v3-entry ${entry.tone}`} href={href(entry.path)}>
+          <div class="v3-entry-top">
+            <span class="v3-symbol">
+              <Icon name={entry.icon} size={32} />
+            </span>
+            <Icon name="arrow-up-right" size={19} />
+          </div>
+          <h3>{entry.title}</h3>
+          <p>{entry.text}</p>
+        </a>
       ))}
-    </div>
+    </nav>
   </section>
-  <section class="portfolio-section">
-    <div class="section-title section-title-row">
+
+  <section class="v3-section" id="work" aria-labelledby="research-heading">
+    <div class="v3-heading">
       <div>
-        <p class="eyebrow">
-          <Icon name="weather" size={20} /> Research in focus
-        </p>
-        <h2>
-          From atmospheric questions
+        <p class="v3-kicker">01 / Research in focus</p>
+        <h2 id="research-heading">
+          Big questions.
           <br />
-          to practical understanding.
+          Real-world connections.
         </h2>
       </div>
-      <a class="button button-light" href={href("research/")}>
-        All research <Icon name="arrow" size={17} />
+      <a class="v3-text-link" href={href("research/")}>
+        View all research <Icon name="arrow-up-right" size={18} />
       </a>
     </div>
-    <div class="alternating-projects">
-      {projects.map((project) => (
-        <ProjectCard project={project} />
-      ))}
+    <div class="v3-research-grid">
+      {featuredResearch.map((project, index) => {
+        const media = projectMedia[project.slug];
+        const asset = manifest.find((a) => a.slug === project.image)!;
+        return (
+          <article
+            class:list={[
+              "v3-research-feature",
+              { "v3-research-lead": index === 0 },
+            ]}
+          >
+            <div class="v3-project-visual">
+              <a
+                href={href(`research/${project.slug}/`)}
+                aria-label={`Read project: ${project.title}`}
+              >
+                <Media name={project.image} alt={media.alt} />
+              </a>
+              <span class="v3-image-label">
+                {index === 0
+                  ? "ENSO / Rainfall"
+                  : index === 1
+                    ? "Tropical meteorology"
+                    : "Science in the community"}
+              </span>
+            </div>
+            <div class="v3-project-copy">
+              <div class="v3-project-meta">
+                <span>{project.context}</span>
+                <span class="v3-badge">{project.status}</span>
+              </div>
+              <h3>
+                <a href={href(`research/${project.slug}/`)}>{project.title}</a>
+              </h3>
+              <p>{project.description}</p>
+              <div class="v3-project-actions">
+                <a
+                  class="v3-text-link"
+                  href={href(`research/${project.slug}/`)}
+                >
+                  Explore project <Icon name="arrow-up-right" size={16} />
+                </a>
+                <FigureViewer
+                  id={`v3-${project.image}`}
+                  title={project.title}
+                  asset={{
+                    src: href(`images/${project.image}${asset.extension}`),
+                    width: asset.dimensions[0],
+                    height: asset.dimensions[1],
+                    alt: media.alt,
+                    caption: media.caption,
+                    sourceLabel: "Supplied by Rizma Prawira",
+                  }}
+                />
+              </div>
+            </div>
+          </article>
+        );
+      })}
     </div>
   </section>
-  <section class="portfolio-section home-teaching" id="teaching">
-    <div>
-      <p class="eyebrow">
-        <Icon name="book" size={21} /> Teaching & learning
-      </p>
-      <h2>{copy.teaching[0]}</h2>
-      <p>{copy.teaching[1]}</p>
-      <div class="teaching-highlights">
-        <span>
-          <strong>150+</strong>Basic Statistics students supported
-        </span>
-        <span>
-          <strong>9</strong>university courses assisted
-        </span>
-        <span>
-          <strong>Since 2024</strong>private tutoring
+
+  <section class="v3-proof" aria-label="Selected highlights">
+    <a href={href("research/")}>
+      <Icon name="notebook-pen" size={27} />
+      <div>
+        <strong>2 public preprints</strong>
+        <span>Research shared openly</span>
+      </div>
+      <Icon name="arrow-up-right" size={16} />
+    </a>
+    <a href={href("teaching/")}>
+      <Icon name="book-open" size={27} />
+      <div>
+        <strong>150+ students</strong>
+        <span>Supported in Basic Statistics</span>
+      </div>
+      <Icon name="arrow-up-right" size={16} />
+    </a>
+    <a href={href("experience/")}>
+      <Icon name="graduation-cap" size={29} />
+      <div>
+        <strong>1st place · 2025</strong>
+        <span title="Faculty of Earth Sciences and Technology, ITB">
+          Most Outstanding Student, FITB
         </span>
       </div>
-      <a class="button" href={href("teaching/")}>
-        Find your learning path <Icon name="arrow" size={17} />
-      </a>
-    </div>
-    <div class="home-subjects">
-      {subjects.map((subject) => (
-        <a
-          href={href(
-            `teaching/${subject.name.toLowerCase().replaceAll(" ", "-")}/`,
-          )}
-        >
-          <Icon name={subject.icon} size={31} />
-          <h3>{subject.name}</h3>
-          <p>{subject.topics}</p>
-        </a>
-      ))}
-    </div>
-  </section>
-  <section class="portfolio-section home-code" id="code-data-ai">
-    <div class="code-intro">
-      <p class="eyebrow">
-        <Icon name="code" size={22} /> Code, Data & AI
-      </p>
-      <h2>{copy.ai[0]}</h2>
-      <p class="ai-quote">{aiStatement}</p>
-      <p>{copy.ai[2]}</p>
-      <a class="button button-light" href={href("code-data-ai/")}>
-        How I build & what I share <Icon name="arrow" size={17} />
-      </a>
-    </div>
-    <a
-      class="featured-resource"
-      href={href("code-data-ai/indonesian-postal-codes/")}
-    >
-      <div class="data-visual">
-        <Icon name="data" size={62} />
-        <div>
-          <span>CSV / XLSX</span>
-          <span>Python</span>
-          <span>Source validation</span>
-        </div>
-      </div>
-      <p class="eyebrow">Public repository</p>
-      <h3>{resources[0].title}</h3>
-      <p>Original sources, validation checks, and documented limitations.</p>
-      <span class="inline-link">
-        Explore the resource <Icon name="arrow" size={17} />
-      </span>
+      <Icon name="arrow-up-right" size={16} />
     </a>
   </section>
-  <section class="portfolio-section journal-welcome">
-    <div>
-      <p class="eyebrow">
-        <Icon name="pen" size={22} /> Notes & Perspectives
-      </p>
-      <h2>
-        A space for curiosity,
+
+  <section
+    class="v3-section v3-experience"
+    aria-labelledby="experience-heading"
+  >
+    <div class="v3-experience-intro">
+      <p class="v3-kicker">02 / Along the way</p>
+      <h2 id="experience-heading">
+        Learning through
         <br />
-        experiments, and everything in between.
+        doing.
       </h2>
-      <p>{copy.blog[0]}</p>
-      <a class="button" href={href("blog/")}>
-        Visit my digital notebook <Icon name="arrow" size={17} />
+      <p>Research, industry, and the people I learn with.</p>
+      <a class="v3-text-link" href={href("experience/")}>
+        About & experience <Icon name="arrow-up-right" size={18} />
       </a>
     </div>
-    <div class="journal-topics">
-      {[
-        ["weather", "Science & Research"],
-        ["code", "Technology & AI"],
-        ["book", "Education & Learning"],
-        ["user", "Life & Reflections"],
-      ].map(([icon, label]) => (
-        <a href={href("blog/")}>
-          <Icon name={icon} size={24} />
-          {label}
-          <Icon name="arrow" size={16} />
-        </a>
+    <div class="v3-timeline">
+      {experience.map((role, index) => (
+        <details>
+          <summary>
+            <span class="v3-timeline-index">0{index + 1}</span>
+            <span>
+              <strong>{role.organization}</strong>
+              <span>{role.title}</span>
+            </span>
+            <span class="v3-period">{role.period}</span>
+            <Icon name="plus" size={18} />
+          </summary>
+          <p>{role.description}</p>
+        </details>
       ))}
-      <p>No articles published yet. This space is ready for genuine notes.</p>
     </div>
   </section>
+
+  <section class="v3-section v3-teaching" aria-labelledby="teaching-heading">
+    <figure class="v3-teaching-photo">
+      <Media
+        name="teaching-classroom"
+        alt="Rizma teaching beside a whiteboard and a projected atmospheric visualization, with students in the foreground."
+      />
+      <figcaption>
+        From atmospheric science to shared understanding.
+        <span>Teaching photograph supplied by Rizma.</span>
+      </figcaption>
+    </figure>
+    <div class="v3-teaching-copy">
+      <p class="v3-kicker">03 / Teaching & learning</p>
+      <h2 id="teaching-heading">{copy.teaching[0]}</h2>
+      <p>{copy.teaching[1]}</p>
+      <div class="v3-actions">
+        <a class="v3-button" href={href("teaching/")}>
+          Explore learning resources <Icon name="arrow-up-right" size={18} />
+        </a>
+        <a class="v3-text-link" href={href("contact/")}>
+          Ask about private tutoring <Icon name="arrow-up-right" size={18} />
+        </a>
+      </div>
+      <p class="v3-small">
+        9 university courses assisted · Private tutoring since 2024
+      </p>
+    </div>
+    <div class="v3-learning-browser">
+      <div class="v3-learning-top">
+        <span class="v3-symbol">
+          <Icon name="book-open" size={29} />
+        </span>
+        <div>
+          <strong>Where would you like to start?</strong>
+          <span>Explore a subject</span>
+        </div>
+      </div>
+      <div
+        class="v3-subject-controls"
+        role="group"
+        aria-label="Choose a learning subject"
+      >
+        {subjects.map((subject, index) => (
+          <button
+            type="button"
+            data-subject={index}
+            data-summary={subjectSummaries[index]}
+            data-name={subject.name}
+            data-href={href(
+              `teaching/${subject.name.toLowerCase().replaceAll(" ", "-")}/`,
+            )}
+            aria-pressed={index === 0 ? "true" : "false"}
+            aria-controls="v3-subject-panel"
+          >
+            <Icon name={subjectIcons[index]} size={23} />
+            {subject.name}
+          </button>
+        ))}
+      </div>
+      <noscript>
+        <nav aria-label="Learning subjects">
+          {subjects.map((subject) => (
+            <a
+              href={href(
+                `teaching/${subject.name.toLowerCase().replaceAll(" ", "-")}/`,
+              )}
+            >
+              {subject.name}
+            </a>
+          ))}
+        </nav>
+      </noscript>
+      <div id="v3-subject-panel" aria-live="polite">
+        <p class="v3-small" id="v3-subject-summary">
+          {subjectSummaries[0]}
+        </p>
+        <a
+          class="v3-text-link"
+          id="v3-subject-link"
+          href={href("teaching/statistics/")}
+        >
+          Explore Statistics <Icon name="arrow-up-right" size={16} />
+        </a>
+        <p class="v3-resource-status">
+          Resource library in preparation. No lessons published yet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="v3-section" aria-labelledby="code-heading">
+    <div class="v3-heading">
+      <div>
+        <p class="v3-kicker">04 / Code, Data & AI</p>
+        <h2 id="code-heading">
+          Useful data.
+          <br />
+          Transparent process.
+        </h2>
+      </div>
+      <a class="v3-text-link" href={href("code-data-ai/")}>
+        Explore the hub <Icon name="arrow-up-right" size={18} />
+      </a>
+    </div>
+    <div class="v3-code-grid">
+      <article class="v3-dataset">
+        <div class="v3-dataset-bar">
+          <span>
+            <Icon name="database" size={20} /> kodepos_posindonesia.csv
+          </span>
+          <span class="v3-badge">Public repository</span>
+        </div>
+        <div class="v3-dataset-content">
+          <h3>
+            Indonesian Postal Code
+            <br />
+            Dataset & Crawler
+          </h3>
+          <p>
+            Retrieving postal-code information from Pos Indonesia, with
+            structured exports, validation checks, and documented sources.
+          </p>
+          <label class="v3-search">
+            <Icon name="search" size={18} />
+            <span class="v3-sr-only">
+              Filter the five-row postal-code sample
+            </span>
+            <input
+              id="postal-search"
+              type="search"
+              placeholder="Search this sample…"
+              autocomplete="off"
+            />
+          </label>
+          <div
+            class="v3-table-region"
+            role="region"
+            aria-label="Postal code source sample"
+            tabindex="0"
+          >
+            <table>
+              <caption>
+                Source sample · Gambir, Jakarta Pusat · DKI Jakarta
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Postal code</th>
+                  <th scope="col">Kelurahan</th>
+                  <th scope="col">Kecamatan</th>
+                </tr>
+              </thead>
+              <tbody>
+                {postal.rows.map((row) => (
+                  <tr data-postal-row>
+                    <td>{row.Kodepos}</td>
+                    <td>{row["Desa / Kelurahan"]}</td>
+                    <td>{row.Kecamatan}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p id="postal-result" class="v3-small" aria-live="polite">
+            5 source records shown.
+          </p>
+          <p class="v3-data-limitation">
+            Sample only; coverage depends on source records returned at
+            collection time.
+          </p>
+          <a class="v3-text-link" href={postal.repository}>
+            View repository <Icon name="arrow-up-right" size={17} />
+          </a>
+          <a class="v3-source-link" href={postal.source}>
+            Original CSV source
+          </a>
+        </div>
+      </article>
+      <div class="v3-ai">
+        <span class="v3-symbol">
+          <Icon name="code-xml" size={29} />
+        </span>
+        <h3>{copy.ai[0]}</h3>
+        <p>{copy.ai[2]}</p>
+        <a class="v3-text-link" href={href("code-data-ai/")}>
+          How I build with AI <Icon name="arrow-up-right" size={17} />
+        </a>
+        <div class="v3-upcoming">
+          <p class="v3-kicker">On the workbench</p>
+          <a href={href("code-data-ai/bmkg-python/")}>
+            <span>
+              Downloading BMKG data with Python<small>Planned guide</small>
+            </span>
+            <Icon name="arrow-up-right" size={17} />
+          </a>
+          <a href={href("code-data-ai/tel-viz/")}>
+            <span>
+              Tel-Viz
+              <small>
+                Atmospheric teleconnection visualization · Project draft
+              </small>
+            </span>
+            <Icon name="arrow-up-right" size={17} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="v3-section v3-journal" aria-labelledby="journal-heading">
+    <div>
+      <p class="v3-kicker">05 / Notes & Perspectives</p>
+      <h2 id="journal-heading">
+        A little room
+        <br />
+        for curiosity.
+      </h2>
+      <p>{copy.blog[0]}</p>
+      <a class="v3-text-link" href={href("blog/")}>
+        Visit my digital notebook <Icon name="arrow-up-right" size={18} />
+      </a>
+      <span class="v3-journal-status">No articles published yet.</span>
+    </div>
+    <nav class="v3-journal-topics" aria-label="Blog topics">
+      {journalTopics.map(([icon, title]) => (
+        <a href={href("blog/")}>
+          <Icon name={icon} size={25} />
+          <span>{title}</span>
+          <Icon name="arrow-up-right" size={18} />
+        </a>
+      ))}
+    </nav>
+  </section>
+
+  <section class="v3-contact" aria-labelledby="contact-heading">
+    <div>
+      <p class="v3-kicker">Keep in touch</p>
+      <h2 id="contact-heading">Let’s connect.</h2>
+      <p>
+        Curious about science, driven by data, and passionate about sharing
+        knowledge.
+      </p>
+    </div>
+    <div>
+      <a class="v3-email" href={`mailto:${contact.email}`}>
+        {contact.email}
+        <Icon name="arrow-up-right" size={23} />
+      </a>
+      <div class="v3-contact-links">
+        <a href={contact.linkedin}>LinkedIn</a>
+        <a href={contact.github}>GitHub</a>
+        <a href={href("cv/")}>CV availability</a>
+      </div>
+    </div>
+  </section>
+  <details class="v3-credits" id="image-credits">
+    <summary>Images & credits</summary>
+    <p>
+      Portrait, research figures, project group photograph, and teaching
+      photograph supplied by Rizma Prawira for this website. Scientific figures
+      retain their original composition and data colors. Icons:{" "}
+      <a href="https://lucide.dev/">Lucide</a>,{" "}
+      <a href={href("icons/lucide/LICENSE")}>ISC / MIT license</a>. Dataset
+      sample: <a href={postal.source}>owner’s postal-code repository</a>. No
+      AI-generated imagery.
+    </p>
+  </details>
+  <script>
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-subject]")
+      .forEach((button) =>
+        button.addEventListener("click", () => {
+          document
+            .querySelectorAll("[data-subject]")
+            .forEach((item) =>
+              item.setAttribute("aria-pressed", String(item === button)),
+            );
+          document.getElementById("v3-subject-summary")!.textContent =
+            button.dataset.summary!;
+          const link = document.getElementById(
+            "v3-subject-link",
+          ) as HTMLAnchorElement;
+          link.textContent = `Explore ${button.dataset.name} ↗`;
+          link.href = button.dataset.href!;
+        }),
+      );
+    const search = document.getElementById("postal-search") as HTMLInputElement;
+    search.addEventListener("input", () => {
+      let count = 0;
+      document
+        .querySelectorAll<HTMLTableRowElement>("[data-postal-row]")
+        .forEach((row) => {
+          row.hidden = !row
+            .textContent!.toLowerCase()
+            .includes(search.value.toLowerCase().trim());
+          if (!row.hidden) count++;
+        });
+      document.getElementById("postal-result")!.textContent = count
+        ? `${count} source record${count === 1 ? "" : "s"} shown.`
+        : "No matching records in this five-row sample.";
+    });
+  </script>
 </Base>

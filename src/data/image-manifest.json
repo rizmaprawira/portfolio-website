@@ -118,5 +118,35 @@
     "extension": ".png",
     "use": "Full image and thumbnail; no crop",
     "permission": "Owner explicitly approved public use on 19 October 2026"
+  },
+  {
+    "filename": "Teaching.jpeg",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Teaching.jpeg",
+    "dimensions": [
+      1280,
+      960
+    ],
+    "format": "JPEG",
+    "description": "Owner-supplied classroom photograph, teaching beside a whiteboard and projected weather visualization.",
+    "kind": "photo",
+    "slug": "teaching-classroom",
+    "extension": ".jpeg",
+    "use": "Teaching homepage and future teaching page; complete photo retained",
+    "permission": "Owner supplied explicitly for website use on 19 October 2026"
+  },
+  {
+    "filename": "Teachings.jpeg",
+    "originalPath": "/Users/rizzie/Work/PortofolioWebsite/AssetsToUse/Teachings.jpeg",
+    "dimensions": [
+      450,
+      800
+    ],
+    "format": "JPEG",
+    "description": "Owner-supplied portrait-format classroom photograph, audience and teaching presentation.",
+    "kind": "photo",
+    "slug": "teaching-classroom-wide",
+    "extension": ".jpeg",
+    "use": "Teaching homepage and future teaching page; complete photo retained",
+    "permission": "Owner supplied explicitly for website use on 19 October 2026"
   }
 ]
